@@ -1,0 +1,107 @@
+:root {
+    --link-color: darkblue;
+    --white: #FEFEFE
+}
+
+a {
+    display: block;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    display: block;
+    background-color: var(--link-color);
+    color: var(--white);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+aside {
+    padding: 20px;
+    grid-area: sidebar;
+    float: left;
+}
+
+aside h1 {
+    font-size: 50px;
+    font-family: serif;
+}
+
+nav a {
+    padding-left: 2%;
+}
+
+body {
+    background-color: var(--white);
+}
+
+div.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+            '... ....... ....... ....... ....... ...'
+            '... sidebar ....... ....... ....... ...'
+            '... sidebar content content content ...'
+            '... sidebar content content content ...'
+            '... sidebar content content content ...'
+            '... sidebar content content content ...'
+            '... sidebar content content content ...'
+            '... ....... content content content ...'
+            '... ....... ....... ....... ....... ...';
+    grid-template-columns: 100px 20%  auto auto auto 100px;
+}
+
+
+div.content {
+    grid-area: content;
+    font-family: serif;
+    padding: 20px;
+    font-size: 18px;
+}
+
+section.navigation {
+    margin-top: 50px;
+    line-height: 140%;
+    font-size: 24px;
+}
+
+nav a {
+    margin-top: 2%;
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 800px) {
+
+    aside h1 {
+        font-size: 32px;
+    }
+
+    div.container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-areas:
+                '... ....... ....... ....... ....... ...'
+                '... sidebar ....... ....... ....... ...'
+                '... sidebar content content content ...'
+                '... sidebar content content content ...'
+                '... sidebar content content content ...'
+                '... sidebar content content content ...'
+                '... sidebar content content content ...'
+                '... ....... content content content ...'
+                '... ....... ....... ....... ....... ...';
+        grid-template-columns: 2% auto auto auto auto 2%;
+    }
+
+    div.content {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+}
+
