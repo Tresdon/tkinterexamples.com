@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Tkinter Examples: A visual reference to the popular python GUI library",
+    "short_name": "Tkinter Examples",
+    "description": "A visual reference to the popular python GUI library tkinter",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#00008B",
+    "background_color": "#00008B",
     "display": "standalone"
 }

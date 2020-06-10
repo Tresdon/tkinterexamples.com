@@ -9,7 +9,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a.active {
     display: block;
     background-color: var(--link-color);
     color: var(--white);
