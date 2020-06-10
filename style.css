@@ -1,107 +1,120 @@
+/* General */
 :root {
     --link-color: darkblue;
     --white: #FEFEFE
 }
 
 a {
-    display: block;
     color: var(--link-color);
     text-decoration: none;
 }
 
 a:hover, a.active {
-    display: block;
     background-color: var(--link-color);
     color: var(--white);
     text-decoration: none;
     cursor: pointer;
 }
 
-aside {
-    padding: 20px;
-    grid-area: sidebar;
-    float: left;
-}
-
-aside h1 {
-    font-size: 50px;
-    font-family: serif;
-}
-
-nav a {
-    padding-left: 2%;
-}
-
 body {
+    font-family: serif;
     background-color: var(--white);
 }
 
-div.container {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-areas:
-            '... ....... ....... ....... ....... ...'
-            '... sidebar ....... ....... ....... ...'
-            '... sidebar content content content ...'
-            '... sidebar content content content ...'
-            '... sidebar content content content ...'
-            '... sidebar content content content ...'
-            '... sidebar content content content ...'
-            '... ....... content content content ...'
-            '... ....... ....... ....... ....... ...';
-    grid-template-columns: 100px 20%  auto auto auto 100px;
-}
+/* Desktop */
+@media only screen and (min-width: 800px) {
 
-
-div.content {
-    grid-area: content;
-    font-family: serif;
-    padding: 20px;
-    font-size: 18px;
-}
-
-section.navigation {
-    margin-top: 50px;
-    line-height: 140%;
-    font-size: 24px;
-}
-
-nav a {
-    margin-top: 2%;
-}
-
-/* Mobile devices */
-@media only screen and (max-width: 800px) {
-
-    aside h1 {
-        font-size: 32px;
-    }
-
+    /* Grid */
     div.container {
         display: grid;
         width: 100vw;
         height: 100vh;
         grid-template-areas:
-                '... ....... ....... ....... ....... ...'
-                '... sidebar ....... ....... ....... ...'
-                '... sidebar content content content ...'
-                '... sidebar content content content ...'
-                '... sidebar content content content ...'
-                '... sidebar content content content ...'
-                '... sidebar content content content ...'
-                '... ....... content content content ...'
-                '... ....... ....... ....... ....... ...';
-        grid-template-columns: 2% auto auto auto auto 2%;
+                '. .... . .... .'
+                '. name . .... .'
+                '. navi . main .'
+                '. navi . main .'
+                '. navi . main .'
+                '. navi . main .'
+                '. .... . .... .';
+        grid-template-rows: 1% 20% 20% 3% auto auto 2%;
+        grid-template-columns: 2% 20% 1% auto 2%;
     }
 
-    div.content {
-        font-size: 20px;
+    div.name {
+        max-height: 100%;
+        grid-area: name;
     }
 
-    nav a {
+    div.main {
+        grid-area: main;
+    }
+
+    div.navigation {
+        grid-area: navi;
+        margin-top: 20px;
+    }
+
+
+    nav.primary {
+        margin-top: 20px;
+        font-size: 22px;
+        display: block;
+    }
+
+    nav.secondary {
+        margin-top: 40px;
+        font-size: 18px;
+        display: block;
+    }
+
+    nav > a {
+        display: block;
+    }
+}
+
+
+/* Mobile devices */
+@media only screen and (max-width: 800px) {
+
+    /* Grid */
+    div.container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-areas:
+                '. .... .... .'
+                '. name navi .'
+                '. main main .'
+                '. .... .... .';
+        grid-template-rows: 1% 25% auto 1%;
+        grid-template-columns: 2% 25% auto 2%;
+    }
+
+    div.main {
+        grid-area: main;
+        font-size: 16px;
+    }
+
+    div.name {
+        grid-area: name;
+    }
+
+    div.navigation {
+        margin-left: 20px;
+        grid-area: navi;
+    }
+
+    nav.primary {
+        margin-top: 30px;
+        display: block;
+        font-size: 22px;
+    }
+
+    nav.secondary{
+        margin-top: 20px;
+        display: block;
         font-size: 18px;
     }
-
 }
 
