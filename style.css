@@ -1,7 +1,8 @@
 /* General */
 :root {
     --link-color: darkblue;
-    --white: #FEFEFE
+    --white: #FEFEFE;
+    --code-background: rgb(232, 232, 232);
 }
 
 a {
@@ -21,11 +22,20 @@ body {
     background-color: var(--white);
 }
 
+code, pre {
+    background-color: var(--code-background);
+    padding: 1px;
+}
+
+h3 {
+    margin-top: 5%;
+}
+
 /* Desktop */
 @media only screen and (min-width: 800px) {
 
     /* Grid */
-    div.container {
+    div#container {
         display: grid;
         width: 100vw;
         height: 100vh;
@@ -41,34 +51,40 @@ body {
         grid-template-columns: 2% 20% 1% auto 2%;
     }
 
-    div.name {
+    div#name {
         max-height: 100%;
         grid-area: name;
     }
 
-    div.main {
+    div#main {
+        max-width: 98%;
         grid-area: main;
     }
 
-    div.navigation {
+    div#navigation {
         grid-area: navi;
         margin-top: 20px;
     }
 
-
-    nav.primary {
+    nav#primary {
         margin-top: 20px;
         font-size: 22px;
         display: block;
     }
 
-    nav.secondary {
+    nav#secondary {
         margin-top: 40px;
         font-size: 18px;
         display: block;
     }
 
-    nav > a {
+    nav#tertiary {
+        margin-top: 40px;
+        font-size: 14px;
+        display: block
+    }
+
+    nav a {
         display: block;
     }
 }
@@ -78,7 +94,7 @@ body {
 @media only screen and (max-width: 800px) {
 
     /* Grid */
-    div.container {
+    div#container {
         display: grid;
         width: 100vw;
         height: 100vh;
@@ -91,30 +107,41 @@ body {
         grid-template-columns: 2% 25% auto 2%;
     }
 
-    div.main {
+    div#main {
+        max-width: 98%;
         grid-area: main;
-        font-size: 16px;
+        font-size: 12px;
     }
 
-    div.name {
+    div#name {
         grid-area: name;
     }
 
-    div.navigation {
-        margin-left: 20px;
+    div#navigation {
+        margin-left: 50px;
         grid-area: navi;
     }
 
-    nav.primary {
+    nav#primary {
         margin-top: 30px;
         display: block;
         font-size: 22px;
     }
 
-    nav.secondary{
+    nav#secondary{
         margin-top: 20px;
         display: block;
         font-size: 18px;
+    }
+
+    nav#tertiary{
+        margin-top: 20px;
+        display: block;
+        font-size: 14px;
+    }
+
+    nav a {
+        margin-left: 1%;
     }
 }
 

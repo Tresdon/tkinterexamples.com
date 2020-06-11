@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-101554390-2');
+    </script>
+
+    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+
+    <title>Tkinter Label Examples</title>
+    <meta charset="utf-8">
+    <meta name="language" content="english">
+    <meta name="description" content="A visual resource for tkinter - the python gui library">
+    <meta name="keywords" content="tkinter,python,gui,examples,options,tcl,tk,visual">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00008B">
+    <meta name="msapplication-TileColor" content="#00008B">
+    <meta name="theme-color" content="#00008B">
+</head>
+
+
+<body>
+
+    <div id="container">
+
+        <div id="name">
+            <h1><a href="/">Tkinter<br>Examples</a></h1>
+        </div>
+
+        <div id="navigation">
+            <nav id="primary"></nav>
+            <nav id="secondary"></nav>
+            <nav id="tertiary"></nav>
+        </div>
+
+        <div id="main">
+            <h2>Label</h2>
+            <p>
+                The <code>Label</code> element is used to add text and images to a GUI application.
+            </p>
+
+            <div id="static_text">
+            <h3>Static Text Label <a href="#static_text">#</a></h3>
+                <p>
+                    A static label can be created using the <code>text=</code> attribute when creating a
+                    <code>Label</code>.
+                </p>
+                <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+tkinter.Label(root, text="Hello, world!").pack()
+
+root.mainloop()
+</pre>
+                <img src="static.png">
+            </div>
+
+            <div id="dynamic_text">
+            <h3>Dynamic Text Label <a href="#dynamic_text">#</a></h3>
+                <p>
+                    A dynamic label can be created using the <code>textvariable=</code> attribute when creating a
+                    <code>Label</code>.
+                </p>
+                <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+text_var = tkinter.StringVar()
+text_var.set("Hello from a variable!")
+tkinter.Label(root, textvariable=text_var).pack()
+
+root.mainloop()
+</pre>
+                <img src="dynamic.png">
+
+                <p>
+                    This can then be updated by doing <code>text_var.set("New Label")</code>
+                </p>
+            </div>
+
+
+            <div id="image">
+            <h3>Image Label <a href="#image">#</a></h3>
+                <p>
+                    A label containing an image can be created using the <code>image=</code> attribute when creating a
+                    <code>Label</code>.
+                    Note that this requires the use of the python image library pillow.
+                    (<code>pip install Pillow</code>)
+                </p>
+                <pre>
+import tkinter
+from PIL import Image, ImageTk
+
+root = tkinter.Tk()
+
+pil_image = Image.open("/path/to/image.jpg")
+pil_image_resized = pil_image.resize((300, 200))
+tkinter_image = ImageTk.PhotoImage(pil_image_resized)
+
+tkinter.Label(root, image=tkinter_image).pack()
+
+root.mainloop()
+    </pre>
+                <img src="image.png">
+                <p>Note that the initial size of the window will be equal to the size of the image</p>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="/scripts/nav.js"></script>
+</body>
+
+</html>

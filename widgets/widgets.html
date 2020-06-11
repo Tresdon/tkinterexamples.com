@@ -3,7 +3,7 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -12,9 +12,7 @@
     gtag('config', 'UA-101554390-2');
     </script>
 
-    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
+    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
     <title>Tkinter Widget Examples</title>
     <meta charset="utf-8">
@@ -37,32 +35,38 @@
 
 <body>
 
-<div class="container">
+<div id="container">
 
-    <div class="name">
+    <div id="name">
         <h1><a href="/">Tkinter<br>Examples</a></h1>
     </div>
 
-    <div class="navigation">
-        <nav class="primary">
-            <a href="/widgets/widgets.html" class="active">Widgets</a>
-            <a href="/layout/layout.html">Layout</a>
-        </nav>
-
-        <nav class="secondary">
-            <a href="">Label</a>
-            <a href="">Button</a>
-            <a href="">Frame</a>
-        </nav>
+    <div id="navigation">
+        <nav id="primary"></nav>
+        <nav id="secondary"></nav>
+        <nav id="tertiary"></nav>
     </div>
 
-    <div class="main">
-        <h2>Label</h2>
-        <h2>Button</h2>
+    <div id="main">
+
+        <h2><a href="/widgets/label/label.html">Label</a></h2>
+        The <code>Label</code> element is used to create text and static images.
+
+
         <h2>Frame</h2>
+        The <code>Frame</code> element is used to contain other elements.
+
+
+        <h2>Button</h2>
+        The <code>Button</code> element is used to create clickable buttons that perform actions.
+
+
     </div>
 
 </div>
+
+<script src="/scripts/nav.js"></script>
+
 
 </body>
 </html>
