@@ -5,7 +5,7 @@ const hierarchy = {
         "frame": [],
         "button": []
     },
-    "layout": {
+    "geometry": {
         "pack": [],
         "grid": [],
         "place": []

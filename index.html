@@ -6,14 +6,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-101554390-2');
+        gtag('config', 'UA-101554390-2');
     </script>
 
-    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script data-ad-client="ca-pub-9659353486631329" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <title>Tkinter Examples</title>
     <meta charset="utf-8">
@@ -36,33 +37,48 @@
 
 <body>
 
-<div id="container">
+    <div id="container">
 
-    <div id="name">
-        <h1>Tkinter<br>Examples</h1>
+        <div id="name">
+            <h1>Tkinter<br>Examples</h1>
+        </div>
+
+
+        <div id="navigation">
+            <nav id="primary"></nav>
+            <nav id="secondary"></nav>
+            <nav id="tertiary"></nav>
+        </div>
+
+        <div id="main">
+            <p>
+
+                <code>tkinter</code> is a python library to create GUIs (graphical user interfaces).
+                This can be used to pull applications out of the command line and into a program with a "face".
+                The entirety of the code on this site is for python3 (python2, python who?)
+            </p>
+        
+            <p>
+                Some examples of interfaces created with tkinter:
+            </p>
+
+            <h2>Photo Viewer</h2>
+            <img src="photo_viewer.png" style="max-width: 800px">
+
+            <h2>A Peer-to-Peer Radio Service</h2>
+            <img src="soundclub_radio.png" style="max-width: 800px">
+
+
+            <hr></hr>
+            <p>
+                NB: We can use <code>tkinter</code> to create all sorts of programs, but note that it isn't intended for game development.
+            </p>
+        </div>
+
+
     </div>
-
-
-    <div id="navigation">
-        <nav id="primary"></nav>
-        <nav id="secondary"></nav>
-        <nav id="tertiary"></nav>
-    </div>
-
-    <div id="main">
-    tkinter is a library to create GUIs in python.
-    This will give a "face" to your application which lives on the command line otherwise.
-    This site and its pages are intended to help you with understanding the elements
-    that are available as well as some of the options for customization.
-
-    <br><br>
-
-    A good place to start is at the <a href="widgets/widgets.html">widgets</a> page
-    </div>
-
-
-</div>
-<script src="/scripts/nav.js"></script>
+    <script src="/scripts/nav.js"></script>
 
 </body>
+
 </html>
