@@ -1,7 +1,7 @@
 // Creates the appropriate nav element for a page
 const hierarchy = {
     "widgets": {
-        "label": ["anchor"],
+        "label": [],
         "frame": [],
         "button": []
     },

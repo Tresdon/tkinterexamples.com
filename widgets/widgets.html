@@ -3,16 +3,17 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-101554390-2');
+        gtag('config', 'UA-101554390-2');
     </script>
 
-    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <script data-ad-client="ca-pub-9659353486631329" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <title>Tkinter Widget Examples</title>
     <meta charset="utf-8">
@@ -21,7 +22,8 @@
     <meta name="keywords" content="tkinter,python,gui,examples,options,tcl,tk,visual">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="/style.css" media="screen">
+    <link rel="stylesheet" href="/style/style.css" media="screen">
+    <link rel="stylesheet" href="/style/grayscale.css" media="screen">
     <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -35,38 +37,108 @@
 
 <body>
 
-<div id="container">
+    <div id="container">
 
-    <div id="name">
-        <h1><a href="/">Tkinter<br>Examples</a></h1>
+        <div id="name">
+            <h1><a href="/">Tkinter<br>Examples</a></h1>
+        </div>
+
+        <div id="navigation">
+            <nav id="primary"></nav>
+            <nav id="secondary"></nav>
+            <nav id="tertiary"></nav>
+        </div>
+
+        <div id="main">
+
+            <div id="label">
+                <h2><a href="/widgets/label/label.html">Label</a> <a href="#label">#</a></h2>
+                The <code>Label</code> element is used to display text and images.
+                <pre>
+from PIL import Image, ImageTk
+import tkinter
+
+root = tkinter.Tk()
+
+# change label colors
+tkinter.Label(root, fg="navy", text="blue text!").pack()
+tkinter.Label(root, bg="navy", fg="white", text="blue background :)").pack()
+
+# Add padding to a label to help it breathe
+tkinter.Label(root, text="text with padding", pady=10).pack()
+
+# Change the font of a label
+tkinter.Label(root, text="helvetica 20", font=("Helvetica", 20)).pack()
+
+# Image and text combined
+image = ImageTk.PhotoImage(Image.open("wave.png"))
+tkinter.Label(root, text="the great wave", image=image, compound=tkinter.LEFT).pack()
+
+root.mainloop()
+</pre>
+
+                <img src="label.png">
+            </div>
+
+            <div id="frame">
+                <h2><a href="/widgets/frame/frame.html">Frame</a> <a href="#frame">#</a></h2>
+                The <code>Frame</code> element is used as a container for other elements.
+
+                <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+# Set up our frames
+left_frame = tkinter.Frame(root, borderwidth=5, relief=tkinter.RIDGE)
+left_frame.pack(side=tkinter.LEFT)
+right_frame = tkinter.Frame(root, background="navy", padx=20, pady=20)
+right_frame.pack(side=tkinter.RIGHT)
+
+# Add items to the left frame
+tkinter.Label(left_frame, text="I'm a label in the left frame").pack()
+tkinter.Button(left_frame, text="Left frame rules!").pack()
+
+# Add items to the right frame
+tkinter.Label(right_frame, text="and I'm in the right frame").pack()
+tkinter.Button(right_frame, text="right frame best frame!").pack()
+    
+root.mainloop()
+</pre>
+
+                <img src="frame.png">
+            </div>
+
+            <div id="button">
+                <h2><a href="/widgets/button/button.html">Button</a> <a href="#button">#</a></h2>
+                The <code>Button</code> element is used to create clickable, event-performing buttons inside an
+                application.
+            </div>
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+tkinter.Button(root, text="Plain Button", command=lambda: print("hello!")).pack()
+tkinter.Button(root, text="Button with some style", \
+font=("Times", 20), fg="navy", activeforeground="navy").pack()
+tkinter.Button(root, text="tall button", height=10).pack()
+tkinter.Button(root, text="wide button", width=20).pack()
+ 
+root.mainloop()
+            </pre>
+
+            <img src="button.png">
+
+        </div>
+
     </div>
 
-    <div id="navigation">
-        <nav id="primary"></nav>
-        <nav id="secondary"></nav>
-        <nav id="tertiary"></nav>
-    </div>
-
-    <div id="main">
-
-        <h2><a href="/widgets/label/label.html">Label</a></h2>
-        The <code>Label</code> element is used to create text and static images.
-
-
-        <h2>Frame</h2>
-        The <code>Frame</code> element is used to contain other elements.
-
-
-        <h2>Button</h2>
-        The <code>Button</code> element is used to create clickable buttons that perform actions.
-
-
-    </div>
-
-</div>
-
-<script src="/scripts/nav.js"></script>
+    <script src="/scripts/nav.js"></script>
+    <script src="/scripts/highlight.pack.js"></script>
+    <script src="/scripts/initHighlight.js"></script>
 
 
 </body>
+
 </html>

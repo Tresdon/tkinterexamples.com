@@ -14,7 +14,7 @@
 
     <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-    <title>Tkinter Label Examples</title>
+    <title>Tkinter Frame Examples</title>
     <meta charset="utf-8">
     <meta name="language" content="english">
     <meta name="description" content="A visual resource for tkinter - the python gui library">
@@ -49,88 +49,82 @@
         </div>
 
         <div id="main">
-            <h2>Label</h2>
+            <h2>Frame</h2>
             <p>
-                The <code>Label</code> element is used to add text and images to a GUI application.
+                The <code>Frame</code> element is used to create containers for other elements -
+                similar to a <code>&lt;div&gt;</code> tag in html.
             </p>
 
-            <div id="static_text">
-                <h3>Static Text Label <a href="#static_text">#</a></h3>
+            <div id="empty">
+                <h3>Empty Frame <a href="#empty">#</a></h3>
                 <p>
-                    A static label can be created using the <code>text=</code> attribute when creating a
-                    <code>Label</code>.
+                    <code>Frame</code> elements do not render if empty.
+                    This can be used as a method to create a sort of "headless" application,
+                    but the preferable method for achieving the same is using <code>root.withdraw()</code>.
                 </p>
+
                 <pre>
 import tkinter
 
 root = tkinter.Tk()
 
-tkinter.Label(root, text="Hello, world!").pack()
+tkinter.Frame(root).pack()
 
 root.mainloop()
 </pre>
-                <img src="static.png">
+                <p>
+                    On running this code we get the notification that a python program is running but no windows are
+                    displayed.
+                </p>
+                <img src="empty.png" />
             </div>
 
-            <div id="dynamic_text">
-                <h3>Dynamic Text Label <a href="#dynamic_text">#</a></h3>
+            <div id="dimensions">
+                <h3>Frame with Dimensions <a href="#dimensions">#</a></h3>
                 <p>
-                    A dynamic label can be created using the <code>textvariable=</code> attribute when creating a
-                    <code>Label</code>.
+                    If we provide dimensions to a <code>Frame</code> then it will render an empty window.
                 </p>
+
                 <pre>
 import tkinter
 
 root = tkinter.Tk()
 
-text_var = tkinter.StringVar()
-text_var.set("Hello from a variable!")
-tkinter.Label(root, textvariable=text_var).pack()
+tkinter.Frame(root, width=100, height=100).pack()
 
-root.mainloop()
+root.mainloop()            
 </pre>
-                <img src="dynamic.png">
-
-                <p>
-                    This can then be updated by doing <code>text_var.set("New Label")</code>
-                </p>
+                <img src="dimensions.png" />
             </div>
 
 
-            <div id="image">
-                <h3>Image Label <a href="#image">#</a></h3>
+            <div id="items">
+                <h3>Frame with Items <a href="#items">#</a></h3>
                 <p>
-                    A label containing an image can be created using the <code>image=</code> attribute when creating a
-                    <code>Label</code>.
-                    Note that this requires the use of the python image library pillow.
-                    (<code>pip install Pillow</code>)
-                    This can be used to display .png, .gif, .tiff, .jpg, and various other image formats
+                    The intended use of the <code>Frame</code> element is to be used as the "master" for other objects.
                 </p>
+
                 <pre>
 import tkinter
-from PIL import Image, ImageTk
 
 root = tkinter.Tk()
 
-pil_image = Image.open("/path/to/image.jpg")
-pil_image_resized = pil_image.resize((300, 200))
-tkinter_image = ImageTk.PhotoImage(pil_image_resized)
+frame = tkinter.Frame(root)
+frame.pack()
 
-tkinter.Label(root, image=tkinter_image).pack()
+tkinter.Label(frame, text="INSIDE A FRAME :)").pack()
 
-root.mainloop()
+root.mainloop()            
 </pre>
-                <img src="image.png">
-                <p>Note that the initial size of the window will be equal to the size of the image provided</p>
+                <img src="items.png" />
             </div>
+
 
 
         </div>
-
-    </div>
-    <script src="/scripts/nav.js"></script>
-    <script src="/scripts/highlight.pack.js"></script>
-    <script src="/scripts/initHighlight.js"></script>
+        <script src="/scripts/nav.js"></script>
+        <script src="/scripts/highlight.pack.js"></script>
+        <script src="/scripts/initHighlight.js"></script>
 </body>
 
 </html>

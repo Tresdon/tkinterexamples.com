@@ -1,15 +1,44 @@
+# Empty Frame
 import tkinter
 
 root = tkinter.Tk()
 
-# Set up frames
-left_frame = tkinter.Frame(root)
-left_frame.pack(side=tkinter.LEFT)
-right_frame = tkinter.Frame(root)
-right_frame.pack(side=tkinter.RIGHT)
+tkinter.Frame(root).pack()
 
-# Add labels
-tkinter.Label(left_frame, text="LEFT").pack()
-tkinter.Label(right_frame, text="RIGHT").pack()
+root.mainloop()
+
+
+# Headless
+import tkinter
+
+root = tkinter.Tk()
+root.withdraw()
+
+root.mainloop()
+
+
+# Frame with dimensions
+import tkinter
+
+root = tkinter.Tk()
+root.title("tkinterexamples.com")
+
+tkinter.Frame(root, width=100, height=100).pack()
+
+root.mainloop()
+
+
+
+# With Items
+import tkinter
+
+root = tkinter.Tk()
+root.title("tkinterexamples.com")
+
+
+frame = tkinter.Frame(root)
+frame.pack()
+
+tkinter.Label(frame, text="INSIDE A FRAME :)").pack()
 
 root.mainloop()
