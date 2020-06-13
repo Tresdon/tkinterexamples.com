@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-101554390-2');
+    </script>
+
+    <script data-ad-client="ca-pub-9659353486631329" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    <title>Tkinter Grid Examples</title>
+    <meta charset="utf-8">
+    <meta name="language" content="english">
+    <meta name="description" content="A visual resource for tkinter - the python gui library">
+    <meta name="keywords" content="tkinter,python,gui,examples,options,tcl,tk,visual">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style/style.css" media="screen">
+    <link rel="stylesheet" href="/style/grayscale.css" media="screen">
+    <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00008B">
+    <meta name="msapplication-TileColor" content="#00008B">
+    <meta name="theme-color" content="#00008B">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="name">
+            <h1><a href="/">Tkinter<br>Examples</a></h1>
+        </div>
+
+        <div id="navigation">
+            <nav id="primary"></nav>
+            <nav id="secondary"></nav>
+            <nav id="tertiary"></nav>
+        </div>
+
+        <div id="main">
+            <h2>Grid</h2>
+            <p>
+                The <code>grid</code> geometry manager offers a good balance of precision and flexibility in its approach.
+                The foundation of <code>grid</code> is defining a <code>row</code> and <code>column</code> for widgets to occupy
+                and optionally providing information about how many rows or columns the widget should span. Many applications lend
+                themselves rather well to this type of geometry manager.
+            </p>
+
+            <h3 id="rows_and_columns">Rows and Columns <a href="#rows_and_columns">#</a></h3>
+            <p>
+                The most important options to provide when using the grid geometry manager is the row and column the
+                element should be in.
+                The size of the grid is defined by usages before the <code>.mainloop()</code> call. Rows and columns
+                with no elements have
+                no height and width, respectively.
+            </p>
+
+            <h4 id="pitfall">One Pitfall <a href="#pitfall">#</a></h4>
+            <p>
+                Using <code>.grid()</code> does allow items to overlap and thus not display properly.
+                If something isn't showing up as you expect double check the uniqueness of all your rows
+                and column definitions.
+            </p>
+
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+tkinter.Label(root, text="Label 1").grid(row=0, column=0)
+tkinter.Label(root, text="Label 2").grid(row=0, column=0)
+
+root.mainloop()
+</pre>
+            <img src="pitfall.png">
+
+            <h4 id="basic">Basic Usage <a href="#basic">#</a></h4>
+            <p>
+                the grid geometry manager allows us to create elements in an orderly fashion, even programatically.
+                We can use this to loop over the state of a board and draw elements for each component. Or we can use it
+                to loop over a set of files and draw icons for them, the list goes on.
+            </p>
+
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+for row in range(3):
+    for col in range(3):
+        tkinter.Label(root, text=f"{row},{col}", fg="navy").grid(row=row, column=col, padx=10)
+
+root.mainloop()
+</pre>
+            <img src="basic.png">
+
+
+            <h3 id="span">Span <a href="#span">#</a></h3>
+
+            <p>
+                In the context of tkinter <code>grid</code> the word `span` refers to how many rows or columns an
+                element takes up. This is the second crucial point for defining the dimensions and layout of our grid.
+                By default all elements span one row and one column - this is also the minimum allowed span.
+            </p>
+
+            <h4 id="rowspan">Row Span <a href="#rowspan">#</a></h4>
+
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+tkinter.Label(root, text="span2", bg="navy", fg="white").grid(row=0, column=1, rowspan=2)
+
+# rowspan=1 is the default
+tkinter.Label(root, text="span1", bg="darkred", fg="white").grid(row=0, column=0)
+tkinter.Label(root, text="span1", bg="darkgreen", fg="white").grid(row=1, column=0)
+
+root.mainloop()
+</pre>
+
+            <img src="rowspan.png">
+
+
+            <h4 id="colspan">Column Span <a href="#colspan">#</a></h4>
+
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+tkinter.Label(root, text="span2", bg="navy", fg="white").grid(row=1, column=0, columnspan=2)
+
+# columnspan=1 is the default
+tkinter.Label(root, text="span1", bg="darkred", fg="white").grid(row=0, column=0)
+tkinter.Label(root, text="span1", bg="darkgreen", fg="white").grid(row=0, column=1)
+
+root.mainloop()
+</pre>
+
+            <img src="columnspan.png">
+
+
+            <h3 id="sticky">Sticky <a href="#sticky">#</a></h3>
+            <p>
+                The <code>grid</code> geometry manager provides access to a <code>sticky</code> attribute which tells
+                tkinter
+                what to do if the cell is to large for the element it is holding. by default the widget will stay
+                centered in the cell which contains it – <code>sticky=""</code>. Otherwise the behavior is defined by
+                string concatenation of the cardinal directions N, S, E, W. These correspond to what side of the cell the element
+                will stick to if needed. You can also use this to tell elements to stretch across portions of their cell
+                similiar to the <code>fill=</code> attribute in the <a href="/geometry/pack/pack.html">pack</a> geometry manager.
+                This is done by using any of the following constants: <code>tkinter.EW</code>, <code>tkinter.NS</code>, <code>tkinter.NSEW</code>.
+            </p>
+            <pre>
+import tkinter
+
+root = tkinter.Tk()
+
+# Padding
+tkinter.Label(root, text="~~~~~~~~~~~", bg="navy", fg="white").grid(row=0, column=0)
+tkinter.Label(root, text="~~~~~~~~~~~", bg="navy", fg="white").grid(row=0, column=1)
+
+tkinter.Label(root, text="W", bg="navy", fg="white").grid(row=1, column=0, sticky=tkinter.W)
+tkinter.Label(root, text="E", bg="navy", fg="white").grid(row=1, column=1, sticky=tkinter.E)
+
+# Padding
+tkinter.Label(root, text="~~~~~~~~~~~", bg="navy", fg="white").grid(row=2, column=0)
+tkinter.Label(root, text="~~~~~~~~~~~", bg="navy", fg="white").grid(row=2, column=1)
+
+tkinter.Label(root, text="CENTER", bg="navy", fg="white").grid(row=3, column=0, sticky="")
+tkinter.Label(root, text="E + W", bg="navy", fg="white").grid(row=3, column=1, sticky=tkinter.EW)
+
+
+root.mainloop()
+</pre>
+
+            <img src="sticky.png">
+
+
+        </div>
+    </div>
+    <script src="/scripts/nav.js"></script>
+    <script src="/scripts/highlight.pack.js"></script>
+    <script src="/scripts/initHighlight.js"></script>
+</body>
+
+</html>
