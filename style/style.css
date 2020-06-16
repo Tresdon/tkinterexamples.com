@@ -18,6 +18,7 @@ a:hover, a.active {
 }
 
 body {
+    overflow-x: hidden;
     font-family: serif;
     background-color: var(--white);
 }
@@ -27,12 +28,31 @@ code, pre {
     padding: 1px;
 }
 
+
 h3 {
     margin-top: 5%;
 }
 
 a {
     padding: 2px;
+}
+
+div.main {
+    max-width: 95%;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    max-width: 95%;
+}
+
+pre {
+    tab-size: 2;
+    white-space: pre-wrap;
+    max-width: 95%;
 }
 
 /* Desktop */
@@ -61,7 +81,6 @@ a {
     }
 
     div#main {
-        max-width: 98%;
         grid-area: main;
     }
 
@@ -112,7 +131,6 @@ a {
     }
 
     div#main {
-        max-width: 98%;
         grid-area: main;
         font-size: 12px;
     }
