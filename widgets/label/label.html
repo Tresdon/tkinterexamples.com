@@ -1,61 +1,52 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
 
+<html dir="ltr" lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
-    <script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-101554390-2');
     </script>
-
-    <script data-ad-client="ca-pub-9659353486631329" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-    <title>Tkinter Label Examples</title>
-    <meta charset="utf-8">
-    <meta name="language" content="english">
-    <meta name="description" content="A visual resource for tkinter - the python gui library">
-    <meta name="keywords" content="tkinter,python,gui,examples,options,tcl,tk,visual">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="/style/style.css" media="screen">
-    <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00008B">
-    <meta name="msapplication-TileColor" content="#00008B">
-    <meta name="theme-color" content="#00008B">
+<script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<title>Tkinter Label Examples</title>
+<meta charset="utf-8"/>
+<meta content="english" name="language"/>
+<meta content="A visual resource for tkinter - the python gui library" name="description"/>
+<meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<link href="/style/style.css" media="screen" rel="stylesheet"/>
+<!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#00008B" name="msapplication-TileColor"/>
+<meta content="#00008B" name="theme-color"/>
 </head>
-
-
 <body>
-
-    <div id="container">
-
-        <div id="name">
-            <h1><a href="/">Tkinter<br>Examples</a></h1>
-        </div>
-
-        <div id="navigation"></div>
-
-        <div id="main">
-            <h2>Label</h2>
-            <p>
+<div id="container">
+<div id="name">
+<h1><a href="/">Tkinter<br/>Examples</a></h1>
+</div>
+<div id="navigation"><nav id="primary"><a class="active" href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a></nav><nav id="secondary"><a class="active" href="/widgets/label/label.html">Label</a><a href="/widgets/frame/frame.html">Frame</a><a href="/widgets/button/button.html">Button</a></nav><nav id="tertiary"></nav></div>
+<div id="main">
+<h2>Label</h2>
+<p>
                 The <code>Label</code> element is used to add text and images to a GUI application.
             </p>
-
-            <div id="static_text">
-                <h3>Static Text Label <a href="#static_text">#</a></h3>
-                <p>
+<div id="static_text">
+<h3>Static Text Label <a href="#static_text">#</a></h3>
+<p>
                     A static label can be created using the <code>text=</code> attribute when creating a
                     <code>Label</code>.
                 </p>
-                <pre>
+<pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -64,16 +55,15 @@ tkinter.Label(root, text="Hello, world!").pack()
 
 root.mainloop()
 </pre>
-                <img src="static.jpg">
-            </div>
-
-            <div id="dynamic_text">
-                <h3>Dynamic Text Label <a href="#dynamic_text">#</a></h3>
-                <p>
+<img src="static.jpg"/>
+</div>
+<div id="dynamic_text">
+<h3>Dynamic Text Label <a href="#dynamic_text">#</a></h3>
+<p>
                     A dynamic label can be created using the <code>textvariable=</code> attribute when creating a
                     <code>Label</code>.
                 </p>
-                <pre>
+<pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -84,24 +74,21 @@ tkinter.Label(root, textvariable=text_var).pack()
 
 root.mainloop()
 </pre>
-                <img src="dynamic.jpg">
-
-                <p>
+<img src="dynamic.jpg"/>
+<p>
                     This can then be updated by doing <code>text_var.set("New Label")</code>
-                </p>
-            </div>
-
-
-            <div id="image">
-                <h3>Image Label <a href="#image">#</a></h3>
-                <p>
+</p>
+</div>
+<div id="image">
+<h3>Image Label <a href="#image">#</a></h3>
+<p>
                     A label containing an image can be created using the <code>image=</code> attribute when creating a
                     <code>Label</code>.
                     Note that this requires the use of the python image library pillow.
                     (<code>pip install Pillow</code>)
                     This can be used to display .png, .gif, .tiff, .jpg, and various other image formats
                 </p>
-                <pre>
+<pre>
 import tkinter
 from PIL import Image, ImageTk
 
@@ -115,14 +102,10 @@ tkinter.Label(root, image=tkinter_image).pack()
 
 root.mainloop()
 </pre>
-                <img src="image.jpg">
-                <p>Note that the initial size of the window will be equal to the size of the image provided</p>
-            </div>
-
-
-        </div>
-
-    </div>
+<img src="image.jpg"/>
+<p>Note that the initial size of the window will be equal to the size of the image provided</p>
+</div>
+</div>
+</div>
 </body>
-
 </html>

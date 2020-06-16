@@ -95,18 +95,22 @@ for root, _, files in os.walk("."):
 
     # Loop over HTML files
     for html_file in html_files:
-            # Make soup from html 
-            html_soup = BeautifulSoup(open(html_file, "r"), features="html.parser")
+        # Make soup from html
+        html_soup = None
+        with (open(html_file, "r")) as file:
+            html_soup = BeautifulSoup(file, features="html.parser")
 
-            # Create the nav from the file path
-            new_div = get_nav(html_file).prettify()
+        assert html_soup is not None
+        # Create the nav from the file path
+        new_div = get_nav(html_file)
 
-            # Page should have an existing div<id="navigation"> tag
-            existing_nav = html_soup.find("div", id="navigation")
-            assert existing_nav is not None
+        # Page should have an existing div<id="navigation"> tag
+        existing_nav = html_soup.find("div", id="navigation")
+        assert existing_nav is not None
 
-            existing_nav.replaceWith(new_div)
+        existing_nav.replaceWith(new_div)
 
-            print(html_soup)
-
-
+        # Write the file back out to the original HTML
+        print(f"Writing out {html_file}")
+        with(open(html_file, "w", encoding="utf-8")) as f:
+            f.write(str(html_soup))
