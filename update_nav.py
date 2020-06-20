@@ -4,6 +4,7 @@ Updates the navigation in the HTML files
 import os
 
 from bs4 import BeautifulSoup
+import tidylib
 
 # HIERARCHY
 HIERARCHY = {
@@ -89,6 +90,11 @@ def get_nav(html_file):
 
     return div
 
+
+def tidy_up_html(html_doc):
+    document, errors = tidylib.tidy_document(html_doc)
+
+
 # Main
 for root, _, files in os.walk("."):
     # filter to html files
@@ -110,10 +116,13 @@ for root, _, files in os.walk("."):
         assert existing_nav is not None
 
         existing_nav.replaceWith(new_div)
-        html_soup = html_soup.prettify(formatter=None)
+
+        tidy_up_html(html_soup)
 
 
         # Write the file back out to the original HTML
         print(f"Writing out {html_file}")
         with(open(html_file, "w", encoding="utf-8")) as f:
             f.write(str(html_soup))
+
+        
