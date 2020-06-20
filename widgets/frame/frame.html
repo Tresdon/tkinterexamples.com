@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
- <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2">
-  </script>
+<head>
+  <meta charset="utf-8"><!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
   <script>
    window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -11,101 +11,51 @@
 
     gtag('config', 'UA-101554390-2');
   </script>
-  <script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-  </script>
-  <title>
-   Tkinter Frame Examples
-  </title>
-  <meta charset="utf-8"/>
-  <meta content="english" name="language"/>
-  <meta content="A visual resource for tkinter - the python gui library" name="description"/>
-  <meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-  <link href="/style/style.css" media="screen" rel="stylesheet"/>
+  <script async data-ad-client="ca-pub-9659353486631329" src=
+  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>Tkinter Frame Examples</title>
+  <meta content="english" name="language">
+  <meta content="A visual resource for tkinter - the python gui library" name="description">
+  <meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/style/style.css" media="screen" rel="stylesheet">
   <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
-  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-  <link href="/site.webmanifest" rel="manifest"/>
-  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
-  <meta content="#00008B" name="msapplication-TileColor"/>
-  <meta content="#00008B" name="theme-color"/>
- </head>
- <body>
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+</head>
+<body>
   <div id="container">
-   <div id="name">
-    <h1>
-     <a href="/">
-      Tkinter
-      <br/>
-      Examples
-     </a>
-    </h1>
-   </div>
-   <div id="navigation">
-    <nav id="primary">
-     <a class="active" href="/widgets/widgets.html">
-      Widgets
-     </a>
-     <a href="/geometry/geometry.html">
-      Geometry
-     </a>
-     <a href="/events/events.html">
-      Events
-     </a>
-    </nav>
-    <nav id="secondary">
-     <a href="/widgets/label/label.html">
-      Label
-     </a>
-     <a class="active" href="/widgets/frame/frame.html">
-      Frame
-     </a>
-     <a href="/widgets/button/button.html">
-      Button
-     </a>
-    </nav>
-    <nav id="tertiary">
-    </nav>
-   </div>
-   <div id="main">
-    <h2>
-     Frame
-    </h2>
-    <p>
-     The
-     <code>
-      Frame
-     </code>
-     element is used to create containers for other elements -
-                similar to a
-     <code>
-      <div>
-      </div>
-     </code>
-     tag in html.
-    </p>
-    <div id="empty">
-     <h3>
-      Empty Frame
-      <a href="#empty">
-       #
-      </a>
-     </h3>
-     <p>
-      <code>
-       Frame
-      </code>
-      elements do not render if empty.
-                    This can be used as a method to create a sort of "headless" application,
-                    but the preferable method for achieving the same is using
-      <code>
-       root.withdraw()
-      </code>
-      .
-     </p>
-     <pre>
+    <div id="name">
+      <h1><a href="/">Tkinter<br>
+      Examples</a></h1>
+    </div>
+    <div id="navigation">
+      <nav id="primary">
+        <a class="active" href="/widgets/widgets.html">Widgets</a> <a href=
+        "/geometry/geometry.html">Geometry</a> <a href="/events/events.html">Events</a>
+      </nav>
+      <nav id="secondary">
+        <a href="/widgets/label/label.html">Label</a> <a class="active" href=
+        "/widgets/frame/frame.html">Frame</a> <a href="/widgets/button/button.html">Button</a>
+      </nav>
+      <nav id="tertiary"></nav>
+    </div>
+    <div id="main">
+      <h2>Frame</h2>
+      <p>The <code>Frame</code> element is used to create containers for other elements - similar to a</p>tag
+      in html.
+      <div id="empty">
+      <h3>Empty Frame <a href="#empty">#</a></h3>
+      <p><code>Frame</code> elements do not render if empty. This can be used as a method to create a sort of
+      "headless" application, but the preferable method for achieving the same is using
+      <code>root.withdraw()</code> .</p>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -114,27 +64,12 @@ tkinter.Frame(root).pack()
 
 root.mainloop()
 </pre>
-     <p>
-      On running this code we get the notification that a python program is running but no windows are
-                    displayed.
-     </p>
-     <img src="empty.jpg"/>
-    </div>
-    <div id="dimensions">
-     <h3>
-      Frame with Dimensions
-      <a href="#dimensions">
-       #
-      </a>
-     </h3>
-     <p>
-      If we provide dimensions to a
-      <code>
-       Frame
-      </code>
-      then it will render an empty window.
-     </p>
-     <pre>
+      <p>On running this code we get the notification that a python program is running but no windows are
+      displayed.</p><img src="empty.jpg"></div>
+      <div id="dimensions">
+      <h3>Frame with Dimensions <a href="#dimensions">#</a></h3>
+      <p>If we provide dimensions to a <code>Frame</code> then it will render an empty window.</p>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -142,24 +77,12 @@ root = tkinter.Tk()
 tkinter.Frame(root, width=100, height=100).pack()
 
 root.mainloop()            
-</pre>
-     <img src="dimensions.jpg"/>
-    </div>
-    <div id="items">
-     <h3>
-      Frame with Items
-      <a href="#items">
-       #
-      </a>
-     </h3>
-     <p>
-      The intended use of the
-      <code>
-       Frame
-      </code>
-      element is to be used as the "master" for other objects.
-     </p>
-     <pre>
+</pre><img src="dimensions.jpg"></div>
+      <div id="items">
+      <h3>Frame with Items <a href="#items">#</a></h3>
+      <p>The intended use of the <code>Frame</code> element is to be used as the "master" for other
+      objects.</p>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -170,10 +93,8 @@ frame.pack()
 tkinter.Label(frame, text="INSIDE A FRAME :)").pack()
 
 root.mainloop()            
-</pre>
-     <img src="items.jpg"/>
+</pre><img src="items.jpg"></div>
     </div>
-   </div>
   </div>
- </body>
+</body>
 </html>

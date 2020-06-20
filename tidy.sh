@@ -1,2 +1,2 @@
 #/usr/bin/env zsh
-tidy -m -config ./tidy.conf ./**/*.html
+tidy -m -config ./tidy.conf *.html */*.html */*/*.html
