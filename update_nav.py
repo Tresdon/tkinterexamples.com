@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
 """
 Updates the navigation in the HTML files
 """
 import os
+import subprocess
 
 from bs4 import BeautifulSoup
 import tidylib
@@ -117,12 +119,14 @@ for root, _, files in os.walk("."):
 
         existing_nav.replaceWith(new_div)
 
-        tidy_up_html(html_soup)
-
-
         # Write the file back out to the original HTML
-        print(f"Writing out {html_file}")
         with(open(html_file, "w", encoding="utf-8")) as f:
+            print(f"{html_file}:")
+            print(f"1/2 Writing Nav...")
             f.write(str(html_soup))
+
+            print("2/2 Running `tidy`")
+            subprocess.call(["tidy", "-m", "-config", "tidy.conf", html_file])
+
 
         
