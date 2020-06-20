@@ -20,7 +20,11 @@ HIERARCHY = {
         "grid": [],
         "place": []
     },
-    "events": {}
+    "events": {
+        "keyboard": [],
+        "mouse": [],
+        "window": []
+    }
 }
 
 PRIMARY_KEYS = HIERARCHY.keys()
@@ -123,7 +127,7 @@ for root, _, files in os.walk("."):
 
         # Write the file back out to the original HTML
         with(open(html_file, "w", encoding="utf-8")) as f:
-            print(f"Writing Nav for {html_file}...")
+            print(f"{html_file} 💚")
             f.write(str(html_soup))
 
 subprocess.call(["zsh", "tidy.sh"])
