@@ -1,56 +1,109 @@
 <!DOCTYPE html>
-
 <html dir="ltr" lang="en">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+ <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-101554390-2');
-    </script>
-<script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<title>Tkinter Pack Examples</title>
-<meta charset="utf-8"/>
-<meta content="english" name="language"/>
-<meta content="A visual resource for tkinter - the python gui library" name="description"/>
-<meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="ie=edge" http-equiv="x-ua-compatible"/>
-<link href="/style/style.css" media="screen" rel="stylesheet"/>
-<!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
-<meta content="#00008B" name="msapplication-TileColor"/>
-<meta content="#00008B" name="theme-color"/>
-</head>
-<body>
-<div id="container">
-<div id="name">
-<h1><a href="/">Tkinter<br/>Examples</a></h1>
-</div>
-<div id="navigation"><nav id="primary"><a href="/widgets/widgets.html">Widgets</a><a class="active" href="/geometry/geometry.html">Geometry</a></nav><nav id="secondary"><a class="active" href="/geometry/pack/pack.html">Pack</a><a href="/geometry/grid/grid.html">Grid</a><a href="/geometry/place/place.html">Place</a></nav><nav id="tertiary"></nav></div>
-<div id="main">
-<h2>Pack</h2>
-<p>
-            The <code>pack</code> geometry manager is the simplest way to get widgets into an application window.
+  </script>
+  <script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <title>
+   Tkinter Pack Examples
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="english" name="language"/>
+  <meta content="A visual resource for tkinter - the python gui library" name="description"/>
+  <meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <link href="/style/style.css" media="screen" rel="stylesheet"/>
+  <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#00008B" name="msapplication-TileColor"/>
+  <meta content="#00008B" name="theme-color"/>
+ </head>
+ <body>
+  <div id="container">
+   <div id="name">
+    <h1>
+     <a href="/">
+      Tkinter
+      <br/>
+      Examples
+     </a>
+    </h1>
+   </div>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">
+      Widgets
+     </a>
+     <a class="active" href="/geometry/geometry.html">
+      Geometry
+     </a>
+     <a href="/events/events.html">
+      Events
+     </a>
+    </nav>
+    <nav id="secondary">
+     <a class="active" href="/geometry/pack/pack.html">
+      Pack
+     </a>
+     <a href="/geometry/grid/grid.html">
+      Grid
+     </a>
+     <a href="/geometry/place/place.html">
+      Place
+     </a>
+    </nav>
+    <nav id="tertiary">
+    </nav>
+   </div>
+   <div id="main">
+    <h2>
+     Pack
+    </h2>
+    <p>
+     The
+     <code>
+      pack
+     </code>
+     geometry manager is the simplest way to get widgets into an application window.
             This is extremely helpful for prototyping an application or a program with only a handful of elements such as a photoviewer,
             a chat application, etc. We probably don't want to use it for our calculator or crossword puzzle app however.
-        </p>
-<div id="no-args">
-<h3>No Arguments Here <a href="#no-args">#</a></h3>
-<p>
-                The great thing about <code>.pack()</code> is that it works even if no arguments are supplied.
+    </p>
+    <div id="no-args">
+     <h3>
+      No Arguments Here
+      <a href="#no-args">
+       #
+      </a>
+     </h3>
+     <p>
+      The great thing about
+      <code>
+       .pack()
+      </code>
+      is that it works even if no arguments are supplied.
                 The behavior in this case is that all widgets will be stacked one on top of another.
-                We commonly use this over at the <a href="/widgets/widgets.html">widgets</a> page to demonstrate what something looks
+                We commonly use this over at the
+      <a href="/widgets/widgets.html">
+       widgets
+      </a>
+      page to demonstrate what something looks
                 like where positioning within the window is not the focus.
-            </p>
-<pre>
+     </p>
+     <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -60,16 +113,33 @@ tkinter.Button(root, text="Button").pack()
 tkinter.Entry(root, text="Entry").pack()
 
 root.mainloop()</pre>
-<img src="no-args.jpg"/>
-</div>
-<div id="side">
-<h3>Picking Sides <a href="#side">#</a></h3>
-<p>
-                To exercise a bit more control over our widgets using <code>pack</code> we can use the <code>side=</code> attribute.
+     <img src="no-args.jpg"/>
+    </div>
+    <div id="side">
+     <h3>
+      Picking Sides
+      <a href="#side">
+       #
+      </a>
+     </h3>
+     <p>
+      To exercise a bit more control over our widgets using
+      <code>
+       pack
+      </code>
+      we can use the
+      <code>
+       side=
+      </code>
+      attribute.
                 This allows us to tell tkinter which side of the containing element (Tk, Frame, TopLevel) we want our widget placed at.
-                The default side used is <code>tkinter.TOP</code>.
-            </p>
-<pre>
+                The default side used is
+      <code>
+       tkinter.TOP
+      </code>
+      .
+     </p>
+     <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -81,17 +151,30 @@ tkinter.Label(root, text="BOTTOM").pack(side=tkinter.BOTTOM)
 
 root.mainloop()
 </pre>
-<img src="side.jpg"/>
-</div>
-<div id="expand">
-<h3>Expanding on That a Bit <a href="#expand">#</a></h3>
-<p>
-                Setting <code>expand=True</code> in <code>.pack()</code> tells the geometry manager to fill
+     <img src="side.jpg"/>
+    </div>
+    <div id="expand">
+     <h3>
+      Expanding on That a Bit
+      <a href="#expand">
+       #
+      </a>
+     </h3>
+     <p>
+      Setting
+      <code>
+       expand=True
+      </code>
+      in
+      <code>
+       .pack()
+      </code>
+      tells the geometry manager to fill
                 any unused space within the widgets parent. Note that this does not change the size of the widget
                 but merely how it is placed within the widget. In the example below you'll see that the EXPAND label
                 is normally sized but it centers itself in the "unused" space of the application.
-            </p>
-<pre>
+     </p>
+     <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -103,16 +186,44 @@ tkinter.Label(root, text="EXPANDED", bg="navy", fg="white").pack(expand=True)
 
 root.mainloop()
 </pre>
-<img src="expand.jpg"/>
-</div>
-<div id="fill">
-<h3>Filling the Rest In  <a href="#fill">#</a></h3>
-<p>
-                    The <code>pack</code> geometry manager gives us the option of setting a <code>fill=</code> argument in order to tell
-                    our widget to fill up space in any direction. There are 4 different fill options, <code>X</code> (horizontally),
-                    <code>Y</code> (vertically), <code>BOTH</code> (either), and <code>NONE</code> (do not fill).
-                </p>
-<pre>
+     <img src="expand.jpg"/>
+    </div>
+    <div id="fill">
+     <h3>
+      Filling the Rest In
+      <a href="#fill">
+       #
+      </a>
+     </h3>
+     <p>
+      The
+      <code>
+       pack
+      </code>
+      geometry manager gives us the option of setting a
+      <code>
+       fill=
+      </code>
+      argument in order to tell
+                    our widget to fill up space in any direction. There are 4 different fill options,
+      <code>
+       X
+      </code>
+      (horizontally),
+      <code>
+       Y
+      </code>
+      (vertically),
+      <code>
+       BOTH
+      </code>
+      (either), and
+      <code>
+       NONE
+      </code>
+      (do not fill).
+     </p>
+     <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -125,22 +236,37 @@ tkinter.Label(root, text="Fill None", bg="black", fg="white").pack(side=tkinter.
 
 root.mainloop()
 </pre>
-<img src="fill.jpg"/>
-<p>
-                    From the sound of it we may expect to the "Fill BOTH" cell to take up more space in the X direction.
-                    The error here is that <code>side=RIGHT</code> for the widget, so it can only "fill" in the Y axis
+     <img src="fill.jpg"/>
+     <p>
+      From the sound of it we may expect to the "Fill BOTH" cell to take up more space in the X direction.
+                    The error here is that
+      <code>
+       side=RIGHT
+      </code>
+      for the widget, so it can only "fill" in the Y axis
                     where it's not pushed to anywhere specific. An example to highlight this, switching only the fill for X
                     to Y and vice versa from above:
-                </p>
-<img src="fill_incorrect.jpg"/>
-<p>
-                    To get a result where our element fills in both directions and takes up any unused space then we want to use <code>fill</code>
-                    in conjunction with <code>expand</code>. From the code above all we have to do is set <code>expand=True</code> on the "Fill BOTH" cell
+     </p>
+     <img src="fill_incorrect.jpg"/>
+     <p>
+      To get a result where our element fills in both directions and takes up any unused space then we want to use
+      <code>
+       fill
+      </code>
+      in conjunction with
+      <code>
+       expand
+      </code>
+      . From the code above all we have to do is set
+      <code>
+       expand=True
+      </code>
+      on the "Fill BOTH" cell
                     and we get this:
-                </p>
-<img src="fill_expand.jpg"/>
-</div>
-</div>
-</div>
-</body>
+     </p>
+     <img src="fill_expand.jpg"/>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>

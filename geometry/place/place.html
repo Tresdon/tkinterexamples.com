@@ -1,62 +1,127 @@
 <!DOCTYPE html>
-
 <html dir="ltr" lang="en">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
+ <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-101554390-2');
-    </script>
-<script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<title>Tkinter Place Examples</title>
-<meta charset="utf-8"/>
-<meta content="english" name="language"/>
-<meta content="A visual resource for tkinter - the python gui library" name="description"/>
-<meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="ie=edge" http-equiv="x-ua-compatible"/>
-<link href="/style/style.css" media="screen" rel="stylesheet"/>
-<!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
-<meta content="#00008B" name="msapplication-TileColor"/>
-<meta content="#00008B" name="theme-color"/>
-</head>
-<body>
-<div id="container">
-<div id="name">
-<h1><a href="/">Tkinter<br/>Examples</a></h1>
-</div>
-<div id="navigation"><nav id="primary"><a href="/widgets/widgets.html">Widgets</a><a class="active" href="/geometry/geometry.html">Geometry</a></nav><nav id="secondary"><a href="/geometry/pack/pack.html">Pack</a><a href="/geometry/grid/grid.html">Grid</a><a class="active" href="/geometry/place/place.html">Place</a></nav><nav id="tertiary"></nav></div>
-<div id="main">
-<h2>Place</h2>
-<p>
-                The <code>place</code> geometry manager offers the most precision in element placement out of the three
+  </script>
+  <script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <title>
+   Tkinter Place Examples
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="english" name="language"/>
+  <meta content="A visual resource for tkinter - the python gui library" name="description"/>
+  <meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <link href="/style/style.css" media="screen" rel="stylesheet"/>
+  <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#00008B" name="msapplication-TileColor"/>
+  <meta content="#00008B" name="theme-color"/>
+ </head>
+ <body>
+  <div id="container">
+   <div id="name">
+    <h1>
+     <a href="/">
+      Tkinter
+      <br/>
+      Examples
+     </a>
+    </h1>
+   </div>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">
+      Widgets
+     </a>
+     <a class="active" href="/geometry/geometry.html">
+      Geometry
+     </a>
+     <a href="/events/events.html">
+      Events
+     </a>
+    </nav>
+    <nav id="secondary">
+     <a href="/geometry/pack/pack.html">
+      Pack
+     </a>
+     <a href="/geometry/grid/grid.html">
+      Grid
+     </a>
+     <a class="active" href="/geometry/place/place.html">
+      Place
+     </a>
+    </nav>
+    <nav id="tertiary">
+    </nav>
+   </div>
+   <div id="main">
+    <h2>
+     Place
+    </h2>
+    <p>
+     The
+     <code>
+      place
+     </code>
+     geometry manager offers the most precision in element placement out of the three
                 package managers however it
                 has a much smaller set of use cases as it can create a lot of headaches to get things into the proper
                 shape. For static window applications (no resizing) it can be a good option.
                 We would generally advise against using it unless you're an advanced user that knows they need it for
                 their purposes (creating a custom geometry manager for instance).
-            </p>
-<h3 id="position">Position <a href="#position">#</a></h3>
-<p>
-                To define the position of elements using the <code>place</code> geometry manager we have two options:
+    </p>
+    <h3 id="position">
+     Position
+     <a href="#position">
+      #
+     </a>
+    </h3>
+    <p>
+     To define the position of elements using the
+     <code>
+      place
+     </code>
+     geometry manager we have two options:
                 absolute position aand relative position. We can also combine these for some utility.
                 These measurements are always relative to the widget's parent.
-            </p>
-<h4 id="absolute_position">Absolute Position <a href="#absolute_position">#</a></h4>
-<p>
-                To use absolute positioning we provide the <code>x=</code> and <code>y=</code> attributes to
-                <code>.place()</code>.
-            </p>
-<pre>
+    </p>
+    <h4 id="absolute_position">
+     Absolute Position
+     <a href="#absolute_position">
+      #
+     </a>
+    </h4>
+    <p>
+     To use absolute positioning we provide the
+     <code>
+      x=
+     </code>
+     and
+     <code>
+      y=
+     </code>
+     attributes to
+     <code>
+      .place()
+     </code>
+     .
+    </p>
+    <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -67,13 +132,29 @@ tkinter.Label(root, text="x=150, y=75").place(x=150, y=75)
 
 root.mainloop()
 </pre>
-<img src="absolute_position.jpg"/>
-<h4 id="relative_position">Relative Position <a href="#relative_position">#</a></h4>
-<p>
-                To use relative positioning we provide the <code>relx=</code> and <code>rely=</code> attributes to
-                <code>.place()</code>.
-            </p>
-<pre>
+    <img src="absolute_position.jpg"/>
+    <h4 id="relative_position">
+     Relative Position
+     <a href="#relative_position">
+      #
+     </a>
+    </h4>
+    <p>
+     To use relative positioning we provide the
+     <code>
+      relx=
+     </code>
+     and
+     <code>
+      rely=
+     </code>
+     attributes to
+     <code>
+      .place()
+     </code>
+     .
+    </p>
+    <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -88,15 +169,29 @@ tkinter.Label(frame, text="relx=1, rely=1").place(relx=1, rely=1)
 
 root.mainloop()   
 </pre>
-<img src="relative_position.jpg"/>
-<p>
-                Notice that in the above example we cannot see the last label. This is because by default the
-                <code>anchor</code> attribute is set to NW. This means the element's top left corner is touching the
+    <img src="relative_position.jpg"/>
+    <p>
+     Notice that in the above example we cannot see the last label. This is because by default the
+     <code>
+      anchor
+     </code>
+     attribute is set to NW. This means the element's top left corner is touching the
                 bottom right corner of our frame.
-            </p>
-<h4 id="centering">Centering <a href="#centering">#</a></h4>
-<p>Centering elements with <code>.place()</code> is rather simple:</p>
-<pre>
+    </p>
+    <h4 id="centering">
+     Centering
+     <a href="#centering">
+      #
+     </a>
+    </h4>
+    <p>
+     Centering elements with
+     <code>
+      .place()
+     </code>
+     is rather simple:
+    </p>
+    <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -109,18 +204,36 @@ tkinter.Label(frame, text="I am centered.. Omm").place(relx=0.5, rely=0.5, ancho
 
 root.mainloop()
 </pre>
-<img src="centering.jpg"/>
-<h3 id="size">Size <a href="#size">#</a></h3>
-<p>
-                Similar to Position, we have two ways of defining the size of an element, absolutely and relative to its
+    <img src="centering.jpg"/>
+    <h3 id="size">
+     Size
+     <a href="#size">
+      #
+     </a>
+    </h3>
+    <p>
+     Similar to Position, we have two ways of defining the size of an element, absolutely and relative to its
                 parent.
-            </p>
-<h4 id="absolute_size">Absolute Size <a href="#absolute_size">#</a></h4>
-<p>
-                Size can be set absolutely using the <code>height</code> and <code>width</code> options on the package
+    </p>
+    <h4 id="absolute_size">
+     Absolute Size
+     <a href="#absolute_size">
+      #
+     </a>
+    </h4>
+    <p>
+     Size can be set absolutely using the
+     <code>
+      height
+     </code>
+     and
+     <code>
+      width
+     </code>
+     options on the package
                 manager.
-            </p>
-<pre>
+    </p>
+    <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -134,13 +247,26 @@ label.place(height=100, width=100, relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 root.mainloop()
                                 
 </pre>
-<img src="absolute_size.jpg"/>
-<h4 id="relative_size">Relative Size <a href="#relative_size">#</a></h4>
-<p>
-                Size can be set relatively using the <code>relheight</code> and <code>relwidth</code> options on the
+    <img src="absolute_size.jpg"/>
+    <h4 id="relative_size">
+     Relative Size
+     <a href="#relative_size">
+      #
+     </a>
+    </h4>
+    <p>
+     Size can be set relatively using the
+     <code>
+      relheight
+     </code>
+     and
+     <code>
+      relwidth
+     </code>
+     options on the
                 package manager.
-            </p>
-<pre>
+    </p>
+    <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -153,8 +279,8 @@ label.place(relheight=0.4, relwidth=0.7, relx=0.5, rely=0.5, anchor=tkinter.CENT
 
 root.mainloop()     
 </pre>
-<img src="relative_size.jpg"/>
-</div>
-</div>
-</body>
+    <img src="relative_size.jpg"/>
+   </div>
+  </div>
+ </body>
 </html>

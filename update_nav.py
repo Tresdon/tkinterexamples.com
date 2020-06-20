@@ -16,7 +16,8 @@ HIERARCHY = {
         "pack": [],
         "grid": [],
         "place": []
-    }
+    },
+    "events": {}
 }
 
 PRIMARY_KEYS = HIERARCHY.keys()
@@ -109,6 +110,8 @@ for root, _, files in os.walk("."):
         assert existing_nav is not None
 
         existing_nav.replaceWith(new_div)
+        html_soup = html_soup.prettify(formatter=None)
+
 
         # Write the file back out to the original HTML
         print(f"Writing out {html_file}")

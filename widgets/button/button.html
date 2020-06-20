@@ -1,52 +1,101 @@
 <!DOCTYPE html>
-
 <html dir="ltr" lang="en">
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+ <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101554390-2">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-101554390-2');
-    </script>
-<script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<title>Tkinter Button Examples</title>
-<meta charset="utf-8"/>
-<meta content="english" name="language"/>
-<meta content="A visual resource for tkinter - the python gui library" name="description"/>
-<meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="ie=edge" http-equiv="x-ua-compatible"/>
-<link href="/style/style.css" media="screen" rel="stylesheet"/>
-<!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
-<meta content="#00008B" name="msapplication-TileColor"/>
-<meta content="#00008B" name="theme-color"/>
-</head>
-<body>
-<div id="container">
-<div id="name">
-<h1><a href="/">Tkinter<br/>Examples</a></h1>
-</div>
-<div id="navigation"><nav id="primary"><a class="active" href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a></nav><nav id="secondary"><a href="/widgets/label/label.html">Label</a><a href="/widgets/frame/frame.html">Frame</a><a class="active" href="/widgets/button/button.html">Button</a></nav><nav id="tertiary"></nav></div>
-<div id="main">
-<h2>Button</h2>
-<p>
-                The <code>Button</code> element is used to create clickable, event-performing buttons inside an
+  </script>
+  <script async="" data-ad-client="ca-pub-9659353486631329" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <title>
+   Tkinter Button Examples
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="english" name="language"/>
+  <meta content="A visual resource for tkinter - the python gui library" name="description"/>
+  <meta content="tkinter,python,gui,examples,options,tcl,tk,visual" name="keywords"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <link href="/style/style.css" media="screen" rel="stylesheet"/>
+  <!-- FAVICON CODE, GENERATED USING realfavicongenerator.net-->
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#00008B" name="msapplication-TileColor"/>
+  <meta content="#00008B" name="theme-color"/>
+ </head>
+ <body>
+  <div id="container">
+   <div id="name">
+    <h1>
+     <a href="/">
+      Tkinter
+      <br/>
+      Examples
+     </a>
+    </h1>
+   </div>
+   <div id="navigation">
+    <nav id="primary">
+     <a class="active" href="/widgets/widgets.html">
+      Widgets
+     </a>
+     <a href="/geometry/geometry.html">
+      Geometry
+     </a>
+     <a href="/events/events.html">
+      Events
+     </a>
+    </nav>
+    <nav id="secondary">
+     <a href="/widgets/label/label.html">
+      Label
+     </a>
+     <a href="/widgets/frame/frame.html">
+      Frame
+     </a>
+     <a class="active" href="/widgets/button/button.html">
+      Button
+     </a>
+    </nav>
+    <nav id="tertiary">
+    </nav>
+   </div>
+   <div id="main">
+    <h2>
+     Button
+    </h2>
+    <p>
+     The
+     <code>
+      Button
+     </code>
+     element is used to create clickable, event-performing buttons inside an
                 application.
-            </p>
-<div id="simple">
-<h3>Simple Button <a href="#simple">#</a></h3>
-<p>
-                    A simple <code>Button</code> is rather easy to set up using only a couple of attributes.
-                </p>
-<pre>
+    </p>
+    <div id="simple">
+     <h3>
+      Simple Button
+      <a href="#simple">
+       #
+      </a>
+     </h3>
+     <p>
+      A simple
+      <code>
+       Button
+      </code>
+      is rather easy to set up using only a couple of attributes.
+     </p>
+     <pre>
 import tkinter
 from tkinter import messagebox
 
@@ -59,15 +108,20 @@ tkinter.Button(root, text="Click Me", command=show_alert).pack()
 
 root.mainloop()
 </pre>
-<img src="simple.jpg"/>
-</div>
-<div id="image">
-<h3>Button with Image <a href="#image">#</a></h3>
-<p>
-                  We can also draw our button with an image instead of text. This can be helpful to create toolbars
+     <img src="simple.jpg"/>
+    </div>
+    <div id="image">
+     <h3>
+      Button with Image
+      <a href="#image">
+       #
+      </a>
+     </h3>
+     <p>
+      We can also draw our button with an image instead of text. This can be helpful to create toolbars
                   with icons for commonly understood operations such as save, print, etc.
-                </p>
-<pre>
+     </p>
+     <pre>
 from PIL import Image, ImageTk
 import tkinter
 from tkinter import messagebox
@@ -80,15 +134,24 @@ tkinter.Button(root, image=image_tk).pack()
 
 root.mainloop()
 </pre>
-<img src="image.jpg"/>
-</div>
-<div id="disabled">
-<h3>Disabled Button <a href="#disabled">#</a></h3>
-<p>
-                    We may want a <code>Button</code> to render even if it isn't currently hooked up to a command.
+     <img src="image.jpg"/>
+    </div>
+    <div id="disabled">
+     <h3>
+      Disabled Button
+      <a href="#disabled">
+       #
+      </a>
+     </h3>
+     <p>
+      We may want a
+      <code>
+       Button
+      </code>
+      to render even if it isn't currently hooked up to a command.
                     In this case we can specify that the button is disabled and this will make it non-clickable.
-                </p>
-<pre>
+     </p>
+     <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -98,17 +161,18 @@ button.pack()
 
 root.mainloop()
 </pre>
-<img src="disabled.jpg"/>
-<p>
-                    If we would like to this button to become useable we need to set a couple attributes:
-                </p>
-<pre>
+     <img src="disabled.jpg"/>
+     <p>
+      If we would like to this button to become useable we need to set a couple attributes:
+     </p>
+     <pre>
 # Give the button a command to execute
 button["command"] = lambda: print("HELLO WORLD!")
 # Set the button state back to normal
 button["state"] = tkinter.NORMAL
 </pre>
-</div>
-</div>
-</div></body>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>
