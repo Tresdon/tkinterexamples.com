@@ -28,17 +28,13 @@ code, pre {
     padding: 1px;
 }
 
-
-h3 {
-    margin-top: 5%;
-}
-
 a {
     padding: 2px;
 }
 
-div.main {
+div#main {
     max-width: 95%;
+    margin-bottom: 3%;
 }
 
 img {
@@ -111,7 +107,7 @@ pre {
         font-size: 14px;
     }
 
-    h4 {
+    h3 {
         font-size: 20px;
     }
 

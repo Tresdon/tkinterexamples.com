@@ -47,28 +47,102 @@
     </div>
     <div id="main">
       <h2>Events</h2>
-      <p>Events in <code>tkinter</code> are things that happen inside your application such as mouse clicks
-      &amp; movements, keyboard entries, window resizes, widget introduction, the list goes on. Generally there
-    are two types of events, those which are built into a widget and those which are explicitly bound to a widget.</p>
-      <h4>Implicit Events</h4>
-      <p>Some widgets have events built into them such as the <code>Button</code> widget which takes a <code>command=</code>
-        argument. This implicitly binds the event for clicking the button to whatever procedure the command argument specifies.
-        Some other widgets with built in event bindings (via <code>command=</code> on state change) are:
-    </p>
-    <ul>
-        <li><code>Checkbutton</code></li>
-        <li><code>Entry</code></li>
-        <li><code>Radiobutton</code></li>
-        <li><code>Scale</code></li>
-        <li><code>Scrolbar</code></li>
-        <li><code>Spinbox</code></li>
-    </ul>
-      
-    <h4>Explicitly-Bound Events</h4>
-    <p></p>
-  <ul>
-      <li><code>&lt;Button1&gt;</code></li>
-  </ul>
+      <p>Events in <code>tkinter</code> are all the command inputs that can happen inside your application
+      such as mouse movements / clicks, keyboard entries, window resizes, widget introduction, the list goes
+      on. Generally there are two types of events, those which are built into a widget and those which are
+      explicitly bound to a widget.</p>
+      <hr>
+      <h3 id="implicit">Implicit Events <a href="#implicit">#</a></h3>
+      <p>Some widgets have events built into them such as the <code>Button</code> widget which takes a
+      <code>command=</code> argument. When we click the button, the callable in our command parameter will be
+      called. Some other widgets with built in event bindings (via <code>command=</code>) are:</p>
+      <ul>
+        <li><code>Checkbutton - called on selection</code></li>
+        <li><code>Entry - called on update (keystroke inside Entry)</code></li>
+        <li><code>Radiobutton - called on selection</code></li>
+        <li><code>Scale - called on update (movement of scale widget)</code></li>
+        <li><code>Scrollbar - called on update (movement of scrollbar)</code></li>
+        <li><code>Spinbox - called on update (new value selected)</code></li>
+      </ul>
+      <hr>
+      <h3 id="explicit">Explicitly-Bound Events <a href="#explicit">#</a></h3>
+      <p>There are many events which can be bound to any widget with the syntax:
+      <code>widget.bind("&lt;Event-Specifier&gt;", callable_handler)</code>. After this the specified handler
+      will get called whenever the event occurs. Note that we can also bind events to our container objects
+      such as <code>Tk, Frame, & TopLevel</code></p>
+      <ul>
+        <li>
+          <a href="/events/keyboard/keyboard.html">Keyboard Events</a>
+        </li>
+        <li>
+          <a href="/events/keyboard/mouse.html">Mouse Events</a>
+        </li>
+        <li>
+          <a href="/events/keyboard/window.html">Window Events</a>
+        </li>
+      </ul>
+      <h4 id="binding-options">Binding Options <a href="#binding-options">#</a></h4>
+      <p>There are multiple ways to bind events to widgets in <code>tkinter</code>:</p>
+      <ul>
+        <li><code>.bind()</code> - bind to the specific widget only (instance binding)</li>
+        <li><code>.bind_class()</code> - bind to the all widgets of this class (class binding)</li>
+        <li><code>.bind_all()</code> - bind across the whole application (application binding)</li>
+      </ul>
+      <p>Be aware that <code>.bind_class()</code> can get in the way of default widget behavior since this is
+      how tkinter itself implements default behaviors for widgets. The preferred method is creating a widget
+      class that inherits from the base class and configures a bind on instantiation.</p>
+      <pre>
+class BoundButton(tkinter.Button):
+    def __init__(self, master, **kw):
+        apply(tkinter.Button.__init__, (self, master), kw)
+        self.bind("&lt;Return&gt;", lambda event: print(event))
+      </pre>
+      <h4 id="callables">Declaring Callables <a href="#callables">#</a></h4>
+      <p>When we declare callables to act as event handlers we should take note that the triggering event
+      will pass an <a href="#event-object">event object</a> into our callable function. This means we should
+      define our event handlers with one parameter: <code>def keyboard_handler(event):</code>. One thing to
+      note is that All events share properties, there is no special keyboard_event, or mouse_event which
+      hides the non-relevant attributes. This means we must be cautious of which type of event is bound to
+      which handler so we don't end up accessing invalid values.</p>
+      <pre>
+def keyboard_handler(event):
+    print(event.char)
+
+def mouse_handler(event):
+    print(event.x, event.y)
+    print(event.char) # prints ??</pre>
+      <p>Note that we can also pass callables directly into the <code>.bind()</code> function using
+      lambdas.</p>
+      <pre>
+root.bind("k", lambda event: print("k was pressed!"))</pre>
+      <h4 id="event-object">The Event Object <a href="#event-object">#</a></h4>
+      <p>The event object passed into our event-handlers has many attributes. Some of the commonly used ones
+      are:</p>
+      <ul>
+        <li><code>widget</code> - the widget which generated the event</li>
+        <li><code>type</code> - the type of event this is (equal to inner text of the event specifier)</li>
+        <li><code>x, y</code> - the position of the mouse relative to the bound widget (mouse events
+        only)</li>
+        <li><code>num</code> - the mouse button pressed (mouse events only)</li>
+        <li><code>char</code> - the pressed key as a character literal (keyboard events only)</li>
+        <li><code>keycode, keysym</code> - the pressed key as a key code or key symbol (keyboard events
+        only)</li>
+      </ul>
+      <hr>
+      <h3 id="protocols">Protocols <a href="#protocols">#</a></h3>
+      <p>Protocols are a concept in <code>tkinter</code> which are Event-adjacent, allowing you to intercept
+      events related to entire window. The most commonly used protocol is <code>"WM_DELETE_WINDOW"</code>.
+      Vanilla window deletion behavior would look something like this:</p>
+      <pre>
+import tkinter
+
+root = tkinter.Tk()
+root.protocol("WM_DELETE_WINDOW", root.destroy)
+
+root.mainloop()
+        </pre>
+      <p>Note that failing to call <code>root.destroy()</code> in the handler for "WM_DELETE_WINDOW" would
+      not close our program when the window exit button is clicked.</p>
     </div>
   </div>
 </body>

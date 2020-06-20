@@ -46,13 +46,13 @@
       </nav>
     </div>
     <div id="main">
-    <h2>Widgets</h2>
-    <p><code>tkinter</code> offers numerous widgets that allow your users to interact with your application
-    in many different ways.</p>
-    <div id="label">
-    <h3><a href="/widgets/label/label.html">Label</a> <a href="#label">#</a></h3>The <code>Label</code>
-    element is used to display text and images.
-    <pre>
+      <h2>Widgets</h2>
+      <p><code>tkinter</code> offers numerous widgets that allow your users to interact with your application
+      in many different ways.</p>
+      <hr>
+      <h3 id="label"><a href="/widgets/label/label.html">Label</a> <a href="#label">#</a></h3>The
+      <code>Label</code> element is used to display text and images.
+      <pre>
 from PIL import Image, ImageTk
 import tkinter
 
@@ -73,11 +73,11 @@ image = ImageTk.PhotoImage(Image.open("wave.png"))
 tkinter.Label(root, text="the great wave", image=image, compound=tkinter.LEFT).pack()
 
 root.mainloop()
-</pre><img src="label.jpg"></div>
-    <div id="frame">
-    <h3><a href="/widgets/frame/frame.html">Frame</a> <a href="#frame">#</a></h3>The <code>Frame</code>
-    element is used as a container for other elements.
-    <pre>
+</pre><img src="label.jpg">
+      <hr>
+      <h3 id="frame"><a href="/widgets/frame/frame.html">Frame</a> <a href="#frame">#</a></h3>The
+      <code>Frame</code> element is used as a container for other elements.
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -97,13 +97,12 @@ tkinter.Label(right_frame, text="and I'm in the right frame").pack()
 tkinter.Button(right_frame, text="right frame best frame!").pack()
     
 root.mainloop()
-</pre><img src="frame.jpg"></div>
-    <div id="button">
-      <h3><a href="/widgets/button/button.html">Button</a> <a href="#button">#</a></h3>The
+</pre><img src="frame.jpg">
+      <hr>
+      <h3 id="button"><a href="/widgets/button/button.html">Button</a> <a href="#button">#</a></h3>The
       <code>Button</code> element is used to create clickable, event-performing buttons inside an
       application.
-    </div>
-    <pre>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -115,7 +114,9 @@ tkinter.Button(root, text="tall button", height=10).pack()
 tkinter.Button(root, text="wide button", width=20).pack()
  
 root.mainloop()
-            </pre><img src="button.jpg"></div>
+            </pre><img src="button.jpg">
+      <hr>
+    </div>
   </div>
 </body>
 </html>

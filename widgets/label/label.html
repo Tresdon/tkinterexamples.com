@@ -49,8 +49,7 @@
     <div id="main">
       <h2>Label</h2>
       <p>The <code>Label</code> element is used to add text and images to a GUI application.</p>
-      <div id="static_text">
-      <h3>Static Text Label <a href="#static_text">#</a></h3>
+      <h3 id="static_text">Static Text Label <a href="#static_text">#</a></h3>
       <p>A static label can be created using the <code>text=</code> attribute when creating a
       <code>Label</code> .</p>
       <pre>
@@ -61,12 +60,11 @@ root = tkinter.Tk()
 tkinter.Label(root, text="Hello, world!").pack()
 
 root.mainloop()
-</pre><img src="static.jpg"></div>
-      <div id="dynamic_text">
-        <h3>Dynamic Text Label <a href="#dynamic_text">#</a></h3>
-        <p>A dynamic label can be created using the <code>textvariable=</code> attribute when creating a
-        <code>Label</code> .</p>
-        <pre>
+</pre><img src="static.jpg">
+      <h3 id="dynamic_text">Dynamic Text Label <a href="#dynamic_text">#</a></h3>
+      <p>A dynamic label can be created using the <code>textvariable=</code> attribute when creating a
+      <code>Label</code> .</p>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -77,15 +75,13 @@ tkinter.Label(root, textvariable=text_var).pack()
 
 root.mainloop()
 </pre><img src="dynamic.jpg">
-        <p>This can then be updated by doing <code>text_var.set("New Label")</code></p>
-      </div>
-      <div id="image">
-        <h3>Image Label <a href="#image">#</a></h3>
-        <p>A label containing an image can be created using the <code>image=</code> attribute when creating a
-        <code>Label</code> . Note that this requires the use of the python image library pillow. ( <code>pip
-        install Pillow</code> ) This can be used to display .png, .gif, .tiff, .jpg, and various other image
-        formats</p>
-        <pre>
+      <p>This can then be updated by doing <code>text_var.set("New Label")</code></p>
+      <h3 id="image">Image Label <a href="#image">#</a></h3>
+      <p>A label containing an image can be created using the <code>image=</code> attribute when creating a
+      <code>Label</code> . Note that this requires the use of the python image library pillow. ( <code>pip
+      install Pillow</code> ) This can be used to display .png, .gif, .tiff, .jpg, and various other image
+      formats</p>
+      <pre>
 import tkinter
 from PIL import Image, ImageTk
 
@@ -99,8 +95,7 @@ tkinter.Label(root, image=tkinter_image).pack()
 
 root.mainloop()
 </pre><img src="image.jpg">
-        <p>Note that the initial size of the window will be equal to the size of the image provided</p>
-      </div>
+      <p>Note that the initial size of the window will be equal to the size of the image provided</p>
     </div>
   </div>
 </body>

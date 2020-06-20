@@ -56,7 +56,7 @@
     <p>The most important options to provide when using the grid geometry manager is the row and column the
     element should be in. The size of the grid is defined by usages before the <code>.mainloop()</code> call.
     Rows and columns with no elements have no height and width, respectively.</p>
-    <h4 id="pitfall">One Pitfall <a href="#pitfall">#</a></h4>
+    <h3 id="pitfall">One Pitfall <a href="#pitfall">#</a></h3>
     <p>Using <code>.grid()</code> does allow items to overlap and thus not display properly. If something
     isn't showing up as you expect double check the uniqueness of all your rows and column definitions.</p>
     <pre>
@@ -69,7 +69,7 @@ tkinter.Label(root, text="Label 2").grid(row=0, column=0)
 
 root.mainloop()
 </pre><img src="pitfall.jpg">
-    <h4 id="basic">Basic Usage <a href="#basic">#</a></h4>
+    <h3 id="basic">Basic Usage <a href="#basic">#</a></h3>
     <p>the grid geometry manager allows us to create elements in an orderly fashion, even programatically. We
     can use this to loop over the state of a board and draw elements for each component. Or we can use it to
     loop over a set of files and draw icons for them, the list goes on.</p>
@@ -88,7 +88,7 @@ root.mainloop()
     <p>In the context of tkinter <code>grid</code> the word `span` refers to how many rows or columns an
     element takes up. This is the second crucial point for defining the dimensions and layout of our grid. By
     default all elements span one row and one column - this is also the minimum allowed span.</p>
-    <h4 id="rowspan">Row Span <a href="#rowspan">#</a></h4>
+    <h3 id="rowspan">Row Span <a href="#rowspan">#</a></h3>
     <pre>
 import tkinter
 
@@ -102,7 +102,7 @@ tkinter.Label(root, text="span1", bg="darkgreen", fg="white").grid(row=1, column
 
 root.mainloop()
 </pre><img src="rowspan.jpg">
-    <h4 id="colspan">Column Span <a href="#colspan">#</a></h4>
+    <h3 id="colspan">Column Span <a href="#colspan">#</a></h3>
     <pre>
 import tkinter
 

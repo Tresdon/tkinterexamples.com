@@ -50,8 +50,7 @@
       <h2>Button</h2>
       <p>The <code>Button</code> element is used to create clickable, event-performing buttons inside an
       application.</p>
-      <div id="simple">
-      <h3>Simple Button <a href="#simple">#</a></h3>
+      <h3 id="simple">Simple Button <a href="#simple">#</a></h3>
       <p>A simple <code>Button</code> is rather easy to set up using only a couple of attributes.</p>
       <pre>
 import tkinter
@@ -65,9 +64,8 @@ root = tkinter.Tk()
 tkinter.Button(root, text="Click Me", command=show_alert).pack()
 
 root.mainloop()
-</pre><img src="simple.jpg"></div>
-      <div id="image">
-      <h3>Button with Image <a href="#image">#</a></h3>
+</pre><img src="simple.jpg">
+      <h3 id="image">Button with Image <a href="#image">#</a></h3>
       <p>We can also draw our button with an image instead of text. This can be helpful to create toolbars
       with icons for commonly understood operations such as save, print, etc.</p>
       <pre>
@@ -82,12 +80,11 @@ image_tk = ImageTk.PhotoImage(Image.open("/path/to/image.png"))
 tkinter.Button(root, image=image_tk).pack()
 
 root.mainloop()
-</pre><img src="image.jpg"></div>
-      <div id="disabled">
-        <h3>Disabled Button <a href="#disabled">#</a></h3>
-        <p>We may want a <code>Button</code> to render even if it isn't currently hooked up to a command. In
-        this case we can specify that the button is disabled and this will make it non-clickable.</p>
-        <pre>
+</pre><img src="image.jpg">
+      <h3 id="disabled">Disabled Button <a href="#disabled">#</a></h3>
+      <p>We may want a <code>Button</code> to render even if it isn't currently hooked up to a command. In
+      this case we can specify that the button is disabled and this will make it non-clickable.</p>
+      <pre>
 import tkinter
 
 root = tkinter.Tk()
@@ -97,14 +94,13 @@ button.pack()
 
 root.mainloop()
 </pre><img src="disabled.jpg">
-        <p>If we would like to this button to become useable we need to set a couple attributes:</p>
-        <pre>
+      <p>If we would like to this button to become useable we need to set a couple attributes:</p>
+      <pre>
 # Give the button a command to execute
 button["command"] = lambda: print("HELLO WORLD!")
 # Set the button state back to normal
 button["state"] = tkinter.NORMAL
 </pre>
-      </div>
     </div>
   </div>
 </body>
