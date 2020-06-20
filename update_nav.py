@@ -125,9 +125,4 @@ for root, _, files in os.walk("."):
             f.write(str(html_soup))
 
 
-# Run tidy at the end
-print("Running `tidy`")
-subprocess.call(["tidy", "-mq", "-config", "tidy.conf", "**/*.html"])
-
-
         
