@@ -29,6 +29,8 @@ NAV_LEVELS = ["primary", "secondary", "tertiary"]
 
 SOUP = BeautifulSoup()
 
+print("Building Navigation 🧭")
+
 # Returns <nav id="primary">...</nav> tag
 def get_primary_nav(tokens):
     first_token = tokens[0] if len(tokens) > 0 else None
@@ -124,5 +126,6 @@ for root, _, files in os.walk("."):
             print(f"Writing Nav for {html_file}...")
             f.write(str(html_soup))
 
+subprocess.call(["zsh", "tidy.sh"])
 
         
