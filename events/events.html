@@ -48,8 +48,27 @@
     <div id="main">
       <h2>Events</h2>
       <p>Events in <code>tkinter</code> are things that happen inside your application such as mouse clicks
-      &amp; movements, keyboard entries, window resizes, widget introduction, the list goes on.</p>
-      <h4>Overview</h4>
+      &amp; movements, keyboard entries, window resizes, widget introduction, the list goes on. Generally there
+    are two types of events, those which are built into a widget and those which are explicitly bound to a widget.</p>
+      <h4>Implicit Events</h4>
+      <p>Some widgets have events built into them such as the <code>Button</code> widget which takes a <code>command=</code>
+        argument. This implicitly binds the event for clicking the button to whatever procedure the command argument specifies.
+        Some other widgets with built in event bindings (via <code>command=</code> on state change) are:
+    </p>
+    <ul>
+        <li><code>Checkbutton</code></li>
+        <li><code>Entry</code></li>
+        <li><code>Radiobutton</code></li>
+        <li><code>Scale</code></li>
+        <li><code>Scrolbar</code></li>
+        <li><code>Spinbox</code></li>
+    </ul>
+      
+    <h4>Explicitly-Bound Events</h4>
+    <p></p>
+  <ul>
+      <li><code>&lt;Button1&gt;</code></li>
+  </ul>
     </div>
   </div>
 </body>
