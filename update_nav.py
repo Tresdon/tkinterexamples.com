@@ -121,12 +121,13 @@ for root, _, files in os.walk("."):
 
         # Write the file back out to the original HTML
         with(open(html_file, "w", encoding="utf-8")) as f:
-            print(f"{html_file}:")
-            print(f"1/2 Writing Nav...")
+            print(f"Writing Nav for {html_file}...")
             f.write(str(html_soup))
 
-            print("2/2 Running `tidy`")
-            subprocess.call(["tidy", "-m", "-config", "tidy.conf", html_file])
+
+# Run tidy at the end
+print("Running `tidy`")
+subprocess.call(["tidy", "-mq", "-config", "tidy.conf", "**/*.html"])
 
 
         
