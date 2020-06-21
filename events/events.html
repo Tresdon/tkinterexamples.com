@@ -58,7 +58,6 @@
       called. Some other widgets with built in event bindings (via <code>command=</code>) are:</p>
       <ul>
         <li><code>Checkbutton - called on selection</code></li>
-        <li><code>Entry - called on update (keystroke inside Entry)</code></li>
         <li><code>Radiobutton - called on selection</code></li>
         <li><code>Scale - called on update (movement of scale widget)</code></li>
         <li><code>Scrollbar - called on update (movement of scrollbar)</code></li>
@@ -100,10 +99,8 @@ class BoundButton(tkinter.Button):
       <h4 id="callables">Declaring Callables <a href="#callables">#</a></h4>
       <p>When we declare callables to act as event handlers we should take note that the triggering event
       will pass an <a href="#event-object">event object</a> into our callable function. This means we should
-      define our event handlers with one parameter. One thing to note is that events share properties, there
-      is no special keyboard_event, or mouse_event which hides the non-relevant attributes - this means we
-      must be cautious of which type of event is bound to which handler so we don't end up accessing invalid
-      values.</p>
+      define our event handlers with one parameter. Implicit events sometimes have the additional
+      argument.</p>
       <pre>
 def keyboard_handler(event):
     print(event.char)
