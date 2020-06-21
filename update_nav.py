@@ -6,7 +6,6 @@ import os
 import subprocess
 
 from bs4 import BeautifulSoup
-import tidylib
 
 # HIERARCHY
 HIERARCHY = {
