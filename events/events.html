@@ -67,9 +67,9 @@
       <hr>
       <h3 id="explicit">Explicitly-Bound Events <a href="#explicit">#</a></h3>
       <p>There are many events which can be bound to any widget with the syntax:
-      <code>widget.bind("&lt;Event-Specifier&gt;", callable_handler)</code>. After this the specified handler
-      will get called whenever the event occurs. Note that we can also bind events to our container objects
-      such as <code>Tk, Frame, & TopLevel</code></p>
+      <code>widget.bind("&lt;Event-Specifier&gt;", callable_handler)</code>. This causes the specified
+      handler to get called whenever the event occurs. Note that we can also bind events to our container
+      objects such as <code>Tk, Frame, &amp; TopLevel</code></p>
       <ul>
         <li>
           <a href="/events/keyboard/keyboard.html">Keyboard Events</a>
@@ -100,10 +100,10 @@ class BoundButton(tkinter.Button):
       <h4 id="callables">Declaring Callables <a href="#callables">#</a></h4>
       <p>When we declare callables to act as event handlers we should take note that the triggering event
       will pass an <a href="#event-object">event object</a> into our callable function. This means we should
-      define our event handlers with one parameter: <code>def keyboard_handler(event):</code>. One thing to
-      note is that All events share properties, there is no special keyboard_event, or mouse_event which
-      hides the non-relevant attributes. This means we must be cautious of which type of event is bound to
-      which handler so we don't end up accessing invalid values.</p>
+      define our event handlers with one parameter. One thing to note is that events share properties, there
+      is no special keyboard_event, or mouse_event which hides the non-relevant attributes - this means we
+      must be cautious of which type of event is bound to which handler so we don't end up accessing invalid
+      values.</p>
       <pre>
 def keyboard_handler(event):
     print(event.char)
@@ -125,24 +125,8 @@ root.bind("k", lambda event: print("k was pressed!"))</pre>
         only)</li>
         <li><code>num</code> - the mouse button pressed (mouse events only)</li>
         <li><code>char</code> - the pressed key as a character literal (keyboard events only)</li>
-        <li><code>keycode, keysym</code> - the pressed key as a key code or key symbol (keyboard events
-        only)</li>
+        <li><code>keycode, keysym</code> - the pressed key as a code or symbol (keyboard events only)</li>
       </ul>
-      <hr>
-      <h3 id="protocols">Protocols <a href="#protocols">#</a></h3>
-      <p>Protocols are a concept in <code>tkinter</code> which are Event-adjacent, allowing you to intercept
-      events related to entire window. The most commonly used protocol is <code>"WM_DELETE_WINDOW"</code>.
-      Vanilla window deletion behavior would look something like this:</p>
-      <pre>
-import tkinter
-
-root = tkinter.Tk()
-root.protocol("WM_DELETE_WINDOW", root.destroy)
-
-root.mainloop()
-        </pre>
-      <p>Note that failing to call <code>root.destroy()</code> in the handler for "WM_DELETE_WINDOW" would
-      not close our program when the window exit button is clicked.</p>
     </div>
   </div>
 </body>
