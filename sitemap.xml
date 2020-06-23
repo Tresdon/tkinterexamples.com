@@ -9,47 +9,67 @@
 
 <url>
   <loc>https://tkinterexamples.com/</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/widgets/widgets.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/geometry/geometry.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tkinterexamples.com/events/events.html</loc>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/widgets/label/label.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/widgets/frame/frame.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/widgets/button/button.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/geometry/pack/pack.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/geometry/grid/grid.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tkinterexamples.com/geometry/place/place.html</loc>
-  <lastmod>2020-06-16T17:17:17+00:00</lastmod>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://tkinterexamples.com/events/keyboard/keyboard.html</loc>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://tkinterexamples.com/events/mouse/mouse.html</loc>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://tkinterexamples.com/events/window/window.html</loc>
+  <lastmod>2020-06-23T16:51:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
