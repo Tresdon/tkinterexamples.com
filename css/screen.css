@@ -1,0 +1,48 @@
+:root {
+    --blue: navy;
+    --white: #FEFEFE;
+}
+
+body {
+    font-family: serif;
+    background-color: var(--white);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+a {
+    padding: 1%;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover, a.active {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
+
+nav a {
+    padding: 1%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    padding: 1%;
+    margin-top: 1%;
+}
+
+#main {
+    margin-top: 4%;
+}
+
+#main img, #main video {
+    max-width: 94%;
+}
+
+
+
+

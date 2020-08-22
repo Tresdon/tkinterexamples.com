@@ -1,0 +1,44 @@
+div#container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+            '... .... .... ...'
+            '... titl main ...'
+            '... navi main ...'
+            '... .... .... ...';
+    grid-template-columns: 2% 20% auto 2%;
+    grid-template-rows: 2% 175px auto 2%;
+}
+
+
+div#main {
+    grid-area: main;
+    font-size: 18px;
+    max-width: 98%;
+    margin-left: 3%;
+}
+
+h1#name {
+    grid-area: titl;
+    font-size: 40px;
+}
+
+div#navigation {
+    grid-area: navi;
+    font-size: 26px;
+}
+
+nav a {
+    display: block;
+}
+
+nav#secondary {
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+nav#tertiary {
+    margin-top: 40px;
+    font-size: 18px;
+}
