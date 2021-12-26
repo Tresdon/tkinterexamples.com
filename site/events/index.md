@@ -1,12 +1,8 @@
 <head>
-  <title>Tkinter Event Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/events">
-  <meta content=
-  "Examples for using python tkinter events to handle button clicks, key presses, and window configurations."
-  name="description">
-  <meta content=
-  "tkinter event examples,python gui events,tkinter events,python tkinter events tutorial,tkinter python events,python gui events tutorial,tkinter bind, tkinter bind examples"
-  name="keywords">
+  <title>Tkinter Events</title>
+  <link rel="canonical" href="https://tkinterexamples.com/events">
+  <meta  name="description" content="Examples for using python tkinter events to handle button clicks, key presses, and window configurations.">
+  <meta name="keywords" content="tkinter event examples">
 </head>
 
 ## Events

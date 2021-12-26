@@ -1,12 +1,8 @@
 <head>
-  <title>Tkinter Mouse Event Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/events/mouse">
-  <meta content=
-  "Examples for using python tkinter mouse events to handle moues movements and clicks within a tkinter application"
-  name="description">
-  <meta content=
-  "tkinter mouse event examples,python gui mouse event,tkinter mouse event,python tkinter mouse event tutorial,tkinter python mouse event,python gui mouse event tutorial"
-  name="keywords">
+<title>Tkinter Mouse Events</title>
+<link rel="canonical" href="https://tkinterexamples.com/events/mouse">
+<meta name="description" content="Examples of handling mouse movements and clicks within a tkinter application">
+<meta name="keywords" content="tkinter mouse event examples,tkinter mouse click examples,tkinter mouse move examples">
 </head>
 
 ## Mouse Events

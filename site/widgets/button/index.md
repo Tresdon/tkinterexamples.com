@@ -1,14 +1,12 @@
 <head>
-  <title>Tkinter Button Widget Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/widgets/button">
-  <meta content= "Examples for using python tkinter button widgets to trigger events within an application" name="description">
-  <meta content=
-  "tkinter button examples,python gui button,tkinter button,tkinter python button,python tkinter button examples,python tkinter button tutorial,python gui button tutorial"
-  name="keywords">
+<title>Tkinter Buttons</title>
+<link rel="canonical" href="https://tkinterexamples.com/widgets/button">
+<meta name="description" content= "Examples of using tkinter buttons to trigger events within an application">
+<meta name="keywords" content="tkinter button examples">
 </head>
 
 ## Button
-The `Button` element is used to create clickable, event-performing buttons inside an application.
+The `Button` element is used to create clickable, eventful buttons inside an application.
 
 ### Simple Button
 A simple `Button` is rather easy to set up using only a couple of attributes.

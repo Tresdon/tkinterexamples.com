@@ -1,13 +1,8 @@
 <head>
-  <!-- Page-Specicific Tags -->
-  <title>Tkinter Keyboard Event Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/events/keyboard">
-  <meta content=
-  "Examples for using python tkinter keyboard events to handle keypresses within a tkinter application"
-  name="description">
-  <meta content=
-  "tkinter keyboard event examples,python gui keyboard event,tkinter keyboard event,python tkinter keyboard event tutorial,tkinter python keyboard event,python gui keyboard event tutorial"
-  name="keywords">
+  <title>Tkinter Keyboard Events</title>
+  <link rel="canonical" href="https://tkinterexamples.com/events/keyboard">
+  <meta name="description" content="Examples of using keyboard events within a tkinter application">
+  <meta name="keywords" content="tkinter keyboard event examples,tkinter keyboard events">
 </head>
 
 ## Keyboard Events

@@ -1,10 +1,8 @@
 <head>
-  <title>Tkinter Label Widget Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/widgets/label/label.html">
-  <meta content= "Examples for using python tkinter label widgets to add text and images to an application " name="description">
-  <meta content=
-  "tkinter lable examples,python gui labels,tkinter label,tkinter python label,python tkinter label examples,python tkinter label tutorial,python gui label tutorial"
-  name="keywords">
+  <title>Tkinter Labels</title>
+  <link rel="canonical" href="https://tkinterexamples.com/widgets/label/">
+  <meta name="description" content= "Examples of using tkinter label widgets to add text and images to an application">
+  <meta name="keywords" content="tkinter label examples">
 </head>
 
 ## Label

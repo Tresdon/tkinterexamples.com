@@ -1,11 +1,8 @@
 <head>
-  <title>Tkinter Grid Geometry Manager Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/geometry/grid/grid.html">
-  <meta content="Examples for using the tkinter grid geometry manager to layout an application with respect to rows and columns."
-  name="description">
-  <meta content=
-  "tkinter grid examples,python gui grid,tkinter grid geometry manager,tkinter python grid,python tkinter grid tutorial,tkinter python grid geometry manager,python gui grid tutorial"
-  name="keywords">
+<title>Tkinter Grid</title>
+<link rel="canonical" href="https://tkinterexamples.com/geometry/grid">
+<meta name="description" content="Examples of using the tkinter grid geometry manager to layout an application with respect to rows and columns">
+<meta name="keywords" content="tkinter grid examples">
 </head>
 
 ## Grid

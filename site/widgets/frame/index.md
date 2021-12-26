@@ -1,10 +1,8 @@
 <head>
-  <title>Tkinter Frame Widget Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/widgets/frame">
-  <meta content= "Examples for using python tkinter frame widgets as containers for other elements." name="description">
-  <meta content=
-  "tkinter frame examples,python gui frame,tkinter frame,tkinter python frame,python tkinter frame examples,python tkinter frame tutorial,python gui frame tutorial"
-  name="keywords">
+  <title>Tkinter Frames</title>
+  <link rel="canonical" href="https://tkinterexamples.com/widgets/frame">
+  <meta name="description" content= "Examples of using tkinter frame widgets as containers for other elements.">
+  <meta name="keywords" content="tkinter frame examples">
 </head>
     
 ## Frame

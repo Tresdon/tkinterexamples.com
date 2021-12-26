@@ -1,11 +1,8 @@
 <head>
-  <title>Tkinter Place Geometry Manager Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/geometry/place">
-  <meta content="Examples for using the tkinter place geometry manager to layout an application with pixel-perfect precision."
-  name="description">
-  <meta content=
-  "tkinter place examples,python gui place,tkinter place geometry manager,tkinter python place,python tkinter place tutorial,tkinter python place geometry manager,python gui place tutorial"
-  name="keywords">
+<title>Tkinter Place</title>
+<link rel="canonical" href="https://tkinterexamples.com/geometry/place">
+<meta name="description" content="Examples of using the tkinter place geometry manager to layout an application with pixel-perfect precision">
+<meta name="keywords" content="tkinter place examples">
 </head>
     
 ## Place

@@ -1,12 +1,8 @@
 <head>
-  <title>Tkinter Widget Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/widgets">
-  <meta content=
-  "Examples for using python tkinter widgets to display elements such as labels for text and images, buttons for triggering events, frames for containing other widgets, canvases for drawing, and more."
-  name="description">
-  <meta content=
-  "tkinter widget examples,python gui widgets,tkinter widgets,tkinter python widgets,python tkinter widget examples,python tkinter widgets tutorial,python gui widgets tutorial"
-  name="keywords">
+<title>Tkinter Widgets</title>
+<link rel="canonical" href="https://tkinterexamples.com/widgets">
+<meta name="description" content="Examples of using tkinter widgets to add elements to an application">
+<meta name="keywords" content="tkinter widget examples">
 </head>
     
     

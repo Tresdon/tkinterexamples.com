@@ -1,12 +1,8 @@
 <head>
-  <title>Tkinter Window Event Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/events/window">
-  <meta content=
-  "Examples for using python tkinter window events to handle resizing, moving, and closing of an application window."
-  name="description">
-  <meta content=
-  "tkinter window event examples,python gui window event,tkinter window event,python tkinter window event tutorial,tkinter python window event,python gui window event tutorial"
-  name="keywords">
+<title>Tkinter Window Events</title>
+<link rel="canonical" href="https://tkinterexamples.com/events/window">
+<meta name="description" content="Examples of handling window events related to resizing, moving, and closing an application window in tkinter">
+<meta name="keywords" content="tkinter window event examples">
 </head>
 
 ## Window Events

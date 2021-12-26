@@ -1,11 +1,8 @@
 <head>
-  <title>Tkinter Geometry Manager Examples</title>
-  <link rel="“canonical”" href="https://tkinterexamples.com/geometry/geometry.html">
-  <meta content="Examples for using python tkinter geometry managers to create many different page layouts."
-  name="description">
-  <meta content=
-  "tkinter geometry manager examples,python gui layout,tkinter geometry manager,tkinter python geometry manager,python tkinter geometry manager tutorial,tkinter python layout,python gui layout tutorial"
-  name="keywords">
+  <title>Tkinter Geometry Managers</title>
+  <link rel="canonical" href="https://tkinterexamples.com/geometry">
+  <meta name="description" content="Examples of using tkinter geometry managers to create different page layouts.">
+  <meta name="keywords" content="tkinter geometry manager examples,tkinter layout examples">
 </head>
 
 ## Geometry
