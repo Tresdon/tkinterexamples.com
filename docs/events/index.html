@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/icons/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+  <title>
+   Tkinter Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events">
+  <meta content="Examples for using python tkinter events to handle button clicks, key presses, and window configurations." name="description">
+  <meta content="tkinter event examples,python gui events,tkinter events,python tkinter events tutorial,tkinter python events,python gui events tutorial,tkinter bind, tkinter bind examples" name="keywords">
+ </head>
+ <body>
+  <header>
+   <h1>
+    <a href="/">tkinter<br>examples</a>
+   </h1>
+   <nav>
+    <a href="/geometry">geometry</a>
+        <a class="active" href="/events">events</a>
+        <a href="/widgets">widgets</a>
+   </nav>
+  </header>
+  <main>
+   <h2>
+    Events
+   </h2>
+   <p>
+    Events in <code>tkinter</code> are all the command inputs that can happen inside your application such as mouse movements / clicks, keyboard entries, window resizes, widget introduction, the list goes on. Generally there are two types of events, those which are built into a widget and those which are explicitly bound to a widget.
+   </p>
+   <h3>
+    Implicit Events
+   </h3>
+   <p>
+    Some widgets have events built into them such as the <code>Button</code> widget which takes a <code>command=</code> argument. When we click the button, the callable in our command parameter will be called. Some other widgets with built in event bindings (via <code>command=</code>) are:
+   </p>
+   <ul>
+    <li>
+     <code>Checkbutton</code> - called on selection
+    </li>
+    <li>
+     <code>Radiobutton</code> - called on selection
+    </li>
+    <li>
+     <code>Scale</code> - called on update (movement of scale widget)
+    </li>
+    <li>
+     <code>Scrollbar</code> - called on update (movement of scrollbar)
+    </li>
+    <li>
+     <code>Spinbox</code> - called on update (new value selected)
+    </li>
+   </ul>
+   <h3>
+    Explicitly-Bound Events
+   </h3>
+   <p>
+    There are many events which can be bound to any widget with the syntax: <code>widget.bind("&lt;Event-Specifier&gt;", callable_handler)</code>. This causes the specified handler to get called whenever the event occurs. Note that we can also bind events to our container
+objects such as <code>Tk, Frame, &amp; TopLevel</code>
+   </p>
+   <ul>
+    <li>
+     <a href="/events/keyboard">Keyboard Events</a>
+    </li>
+    <li>
+     <a href="/events/mouse">Mouse Events</a>
+    </li>
+    <li>
+     <a href="/events/window">Window Events</a>
+    </li>
+   </ul>
+   <h4>
+    Binding Options
+   </h4>
+   <p>
+    There are multiple ways to bind events to widgets in <code>tkinter</code>:
+   </p>
+   <ul>
+    <li>
+     <code>.bind()</code> - bind to the specific widget only (instance binding)
+    </li>
+    <li>
+     <code>.bind_class()</code> - bind to the all widgets of this class (class binding)
+    </li>
+    <li>
+     <code>.bind_all()</code> - bind across the whole application (application binding)
+    </li>
+   </ul>
+   <p>
+    Be aware that <code>.bind_class()</code> can get in the way of default widget behavior since this is how tkinter itself implements default behaviors for widgets. The preferred method is creating a widget class that inherits from the base class and configures a bind on instantiation.
+   </p>
+   <pre><code>class BoundButton(tkinter.Button):
+def __init__(self, master, **kw):
+  apply(tkinter.Button.__init__, (self, master), kw)
+  self.bind("&lt;Return&gt;", lambda event: print(event))
+</code></pre>
+   <h4>
+    Declaring Callables
+   </h4>
+   <p>
+    When we declare callables to act as event handlers we should take note that the triggering event will pass an <code>event object</code> (see below) into our callable function. This means we should define our event handlers with one parameter. Implicit events sometimes have the additional argument.
+   </p>
+   <pre><code>def keyboard_handler(event):
+print(event.char)
+
+def mouse_handler(event):
+print(event.x, event.y)
+print(event.char) # prints ??
+</code></pre>
+   <p>
+    Note that we can also pass callables directly into the <code>.bind()</code> function using lambdas.
+   </p>
+   <pre><code>root.bind("k", lambda event: print("k was pressed!"))
+</code></pre>
+   <h4>
+    The Event Object
+   </h4>
+   <p>
+    The event object passed into our event-handlers has many attributes. Some of the commonly used ones are:
+   </p>
+   <ul>
+    <li>
+     <code>widget</code> - the widget which generated the event
+    </li>
+    <li>
+     <code>type</code> - the type of event this is (equal to inner text of the event specifier)
+    </li>
+    <li>
+     <code>x, y</code> - the position of the mouse relative to the bound widget (mouse events
+only)
+    </li>
+    <li>
+     <code>num</code> - the mouse button pressed (mouse events only)
+    </li>
+    <li>
+     <code>char</code> - the pressed key as a character literal (keyboard events only)
+    </li>
+    <li>
+     <code>keycode, keysym</code> - the pressed key as a code or symbol (keyboard events only)
+    </li>
+   </ul>
+  </main>
+  <footer></footer>
+  <script async="true" src="/js/count.js"></script>
+ </body>
+</html>

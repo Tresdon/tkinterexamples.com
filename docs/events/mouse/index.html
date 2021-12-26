@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/icons/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+  <title>
+   Tkinter Mouse Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events/mouse">
+  <meta content="Examples for using python tkinter mouse events to handle moues movements and clicks within a tkinter application" name="description">
+  <meta content="tkinter mouse event examples,python gui mouse event,tkinter mouse event,python tkinter mouse event tutorial,tkinter python mouse event,python gui mouse event tutorial" name="keywords">
+ </head>
+ <body>
+  <header>
+   <h1>
+    <a href="/">tkinter<br>examples</a>
+   </h1>
+   <nav>
+    <a href="/geometry">geometry</a>
+        <a class="active" href="/events">events</a>
+        <a href="/widgets">widgets</a>
+   </nav>
+  </header>
+  <main>
+   <h2>
+    Mouse Events
+   </h2>
+   <p>
+    Capturing mouse events inside our <code>tkinter</code> program.
+   </p>
+   <h3>
+    Moving
+   </h3>
+   <p>
+    We can bind to mouse movement by using <code>widget.bind("&lt;Motion&gt;", motion_handler)</code>.This is a very noisy (registers on every pixel moved) and imprecise (but not quite every pixel) event so
+we cannot recommend it for general use. This will register the correct position once the mouse settles. For a better solution refer to the “dragging” section below.
+   </p>
+   <h3>
+    Clicking
+   </h3>
+   <p>
+    There’s multiple ways to bind to a mouse click event:
+   </p>
+   <ul>
+    <li>
+     <code>&lt;Button&gt;</code> - The element was clicked
+    </li>
+    <li>
+     <code>&lt;Double-Button&gt;</code> - The element was double clicked
+    </li>
+    <li>
+     <code>&lt;Triple-Button&gt;</code> - The element was triple clicked
+    </li>
+    <li>
+     <code>&lt;ButtonPress&gt;</code> - A click on the element has begun
+    </li>
+    <li>
+     <code>&lt;ButtonRelease&gt;</code> - A click on the element was released
+    </li>
+   </ul>
+   <p>
+    All of these options can be suffixed with <code>-{num}</code> where num is a single digit. <code>1=left click, 2=right click &amp; 3=middle click (scroll wheel click)</code>. An alternative to this is using the <code>.num</code> attribute on the event object.
+   </p>
+   <pre><code>import tkinter
+
+root = tkinter.Tk()
+
+def click_handler(event):
+# event also has x &amp; y attributes
+if event.num == 2:
+    print("RIGHT CLICK")
+
+root.bind("&lt;Button-1&gt;", lambda x: print("LEFT CLICK"))
+root.bind("&lt;Button&gt;", click_handler)
+
+root.mainloop()
+</code></pre>
+   <h3>
+    Dragging
+   </h3>
+   <p>
+    To capture a click-and-drag event use any of the <code>&lt;B1-Motion&gt;</code> (left-click), <code>&lt;B2-Motion&gt;</code> (right click) or <code>&lt;B3-Motion&gt;</code> (middle mouse button click). Note that Note that when dragging outside of an element the event still fires.
+   </p>
+   <pre><code>import tkinter
+
+root = tkinter.Tk()
+label = tkinter.Label(root, text="HEY")
+label.pack()
+
+def drag_handler(event):
+print(event.x, event.y)
+
+label.bind("&lt;B1-Motion&gt;", drag_handler)
+
+root.mainloop()
+</code></pre>
+   <h3>
+    Hovering
+   </h3>
+   <p>
+    Hovering over an element sends out two events in sequence, <code>&lt;Enter&gt;</code> and <code>&lt;Leave&gt;</code>
+   </p>
+   <pre><code>import tkinter
+
+root = tkinter.Tk()
+
+label = tkinter.Label(root, text="HELLO", bg="white", fg="navy")
+label.bind("&lt;Enter&gt;", lambda event: event.widget.config(bg="navy", fg="white"))
+label.bind("&lt;Leave&gt;", lambda event: event.widget.config(bg="white", fg="navy"))
+label.pack()
+
+root.mainloop()
+</code></pre>
+   <p>
+    Hovering the text shows it with a blue background and leaving it sets it back to default.
+   </p>
+   <p>
+    <img src="enter.jpg" alt="Entering the label">
+<img src="leave.jpg" alt="Leaving the label">
+   </p>
+  </main>
+  <footer></footer>
+  <script async="true" src="/js/count.js"></script>
+ </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Tkinter Mouse Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events/mouse/mouse.html">
+  <meta content="Examples for using python tkinter mouse events to handle moues movements and clicks within a tkinter application" name="description">
+  <meta content="tkinter mouse event examples,python gui mouse event,tkinter mouse event,python tkinter mouse event tutorial,tkinter python mouse event,python gui mouse event tutorial" name="keywords">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 800px)">
+  <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 800px)">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+ </head>
+ <body>
+  <div id="container">
+   <h1 id="name">
+    <a href="/">Tkinter<br>
+      Examples</a>
+   </h1>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a><a class="active" href="/events/events.html">Events</a>
+    </nav>
+    <nav id="secondary">
+     <a href="/events/keyboard/keyboard.html">Keyboard</a><a class="active" href="/events/mouse/mouse.html">Mouse</a><a href="/events/window/window.html">Window</a>
+    </nav>
+    <nav id="tertiary"></nav>
+   
+   
+    ## 
+     Mouse Events
+    
+    Capturing mouse events inside our `tkinter` program.
+    
+    ### Moving <a href="#moving">#</a>
+    We can bind to mouse movement by using `widget.bind("<Motion>", motion_handler)`.
+    This is a very noisy (registers on every pixel moved) and imprecise (but not quite every pixel) event so
+    we cannot recommend it for general use. This will register the correct position once the mouse settles.
+    For a better solution reference the <a href="#dragging">dragging</a> section below.
+    
+    ### Clicking <a href="#clicking">#</a>
+    There's multiple ways to bind to a mouse click event:
+    
+      - `<Button>` - The element was clicked
+      - `<Double-Button>` - The element was double clicked
+      - `<Triple-Button>` - The element was triple clicked
+      - `<ButtonPress>` - A click on the element has begun
+      - `<ButtonRelease>` - A click on the element was released
+    
+    All of these options can be suffixed with `-{num}` where num is a single digit.
+    `1=left click, 2=right click & 3=middle click (scroll wheel click)`. An alternative to
+    this is using the `.num` attribute on the event object.
+    ```
+import tkinter
+
+root = tkinter.Tk()
+
+def click_handler(event):
+# event also has x & y attributes
+if event.num == 2:
+        print("RIGHT CLICK")
+
+root.bind("<Button-1>", lambda x: print("LEFT CLICK"))
+root.bind("<Button>", click_handler)
+
+root.mainloop()
+```
+    
+    ### Dragging <a href="#dragging">#</a>
+    To capture a click-and-drag event use any of the `<B1-Motion>` (left-click),
+    `<B2-Motion>` (right click) or `<B3-Motion>` (middle mouse button
+    click). Note that Note that when dragging outside of an element the event still fires.
+    ```
+# Dragging
+import tkinter
+
+root = tkinter.Tk()
+label = tkinter.Label(root, text="HEY")
+label.pack()
+
+def drag_handler(event):
+    print(event.x, event.y)
+
+label.bind("<B1-Motion>", drag_handler)
+
+root.mainloop()
+      ```
+    
+    ### Hovering <a href="#hovering">#</a>
+    Hovering over an element sends out two events in sequence: `<Enter>` and
+    `<Leave>`
+    ```
+import tkinter
+
+root = tkinter.Tk()
+
+label = tkinter.Label(root, text="HELLO", bg="white", fg="navy")
+label.bind("<Enter>", lambda event: event.widget.config(bg="navy", fg="white"))
+label.bind("<Leave>", lambda event: event.widget.config(bg="white", fg="navy"))
+label.pack()
+
+root.mainloop()
+      ```
+    Hovering the text shows it with a blue background and leaving it sets it back to default.<img alt="entering the label" src="enter.jpg"> <img alt="leaving the label" src="leave.jpg">
+   
+  
+ </body>
+</html>

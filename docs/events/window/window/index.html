@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Tkinter Window Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events/window/window.html">
+  <meta content="Examples for using python tkinter window events to handle resizing, moving, and closing of an application window." name="description">
+  <meta content="tkinter window event examples,python gui window event,tkinter window event,python tkinter window event tutorial,tkinter python window event,python gui window event tutorial" name="keywords">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 800px)">
+  <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 800px)">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+ </head>
+ <body>
+  <div id="container">
+   <h1 id="name">
+    <a href="/">Tkinter<br>
+      Examples</a>
+   </h1>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a><a class="active" href="/events/events.html">Events</a>
+    </nav>
+    <nav id="secondary">
+     <a href="/events/keyboard/keyboard.html">Keyboard</a><a href="/events/mouse/mouse.html">Mouse</a><a class="active" href="/events/window/window.html">Window</a>
+    </nav>
+    <nav id="tertiary"></nav>
+   
+   
+    ## Window Events
+    There are a few events that occur at the window level - namely moving, resizing and closing.
+    
+    ### Window Moving & Resizing
+    We can create a handler for when the window is moved and resized by binding to the
+    `
+    <configure>
+     ` event.
+    ```
+import tkinter
+
+root = tkinter.Tk()
+
+def configure_handler(event):
+    print(event)
+
+root.bind("
+     <configure>
+      ", configure_handler)
+
+root.mainloop()
+```
+    Now every time we move the window we get output with the new location information for our window:
+    ```
+      <configure event="" x="136" y="53" width="404" height="295">
+       <configure event="" x="136" y="53" width="456" height="310">
+        ...
+```
+    Note that widgets can also bind to the `
+        <configure>
+         ` event to get information about
+    when their size and shape changes.
+    
+    ### Window Closing
+    The application window closing is not an `Event` proper but rather a `Protocol`.
+    This is an event-adjacent concept which uses slightly different syntax. We can bind to it using
+    `root.protocol("WM_DELETE_WINDOW", window_close_handler)`. Note that protocols are intercepted
+    (not propagated) so we must be sure to destroy the object manually to ensure our window works as
+    expected. We can use this protocol to prompt the user to confirmt they want to exit. This can be used in
+    case the user has unsaved work or something similar.
+    ```
+import tkinter
+from tkinter import messagebox
+
+root = tkinter.Tk()
+
+def window_exit():
+    close = messagebox.askyesno("Exit?", "Are you sure you want to exit?")
+    if close:
+        root.destroy()
+
+root.protocol("WM_DELETE_WINDOW", window_exit)
+
+root.mainloop()
+```<img src="protocol.jpg">
+        </configure>
+       </configure>
+      </configure>
+     </configure>
+    </configure>
+   
+  
+ </body>
+</html>

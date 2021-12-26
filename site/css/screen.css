@@ -1,0 +1,114 @@
+:root {
+    --primary: rgb(0, 0, 128);
+    --white: #FEFEFE;
+    --black: black;
+    --code-background: #f0927f;
+    --font-family: Georgia, 'Times New Roman', Times, serif;
+    --writing-max-width: 600px; /* Not too many characters to read */
+    --art-max-width: 94%; /* Fit comfy on the page available */
+    --spread: 1;
+    --scale: 1;
+}
+
+/* Sections */
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    flex-basis: var(--writing-max-width);
+    font-family: var(--font-family);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    margin: calc(var(--spread) * 2em) 0;
+    justify-self: flex-start;
+}
+
+main {
+    max-width: var(--writing-max-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: calc(var(--spread) * 2em) 40px;
+    font-size: calc(var(--scale) * 1.2em);
+}
+
+footer {
+    width: 100%;
+}
+
+/* Header */
+header a {
+    display: inline-block;
+    color: var(--black);
+    text-decoration: none;
+    text-underline-offset: calc(var(--spread) * 4px);
+}
+
+header a:hover, header a.active {
+    color: var(--black);
+    background-color: var(--white);
+    text-decoration: underline var(--primary) calc(var(--scale) * 3px);
+}
+
+header nav a {
+    padding: calc(var(--spread) * 3px);
+    font-size: calc(var(--scale) * 1.2em);
+}
+
+header h1 {
+    text-align: center;
+    color: var(--black);
+    font-size: calc(var(--scale) * 2.1em);
+    padding: calc(var(--spread) * 4px);
+}
+
+/* Main */
+main a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+main a:visited {
+    color: var(--primary);
+}
+
+main a:hover{
+    text-underline-offset: calc(var(--spread) * 4px);
+    text-decoration: underline var(--primary) calc(var(--scale) * 2px);
+}
+
+/* Elements */
+img {
+    margin: calc(var(--spread) * 30px);
+    max-width: 98%;
+}
+
+code {
+    font-size: calc(var(--scale) * 0.9em);
+}
+
+pre code {
+    display: block;
+    padding: 20px;
+    background-color: var(--code-background);
+    overflow: scroll;
+    text-overflow: normal;
+    opacity: 0.8;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}

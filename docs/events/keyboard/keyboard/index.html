@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Tkinter Keyboard Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events/keyboard/keyboard.html">
+  <meta content="Examples for using python tkinter keyboard events to handle keypresses within a tkinter application" name="description">
+  <meta content="tkinter keyboard event examples,python gui keyboard event,tkinter keyboard event,python tkinter keyboard event tutorial,tkinter python keyboard event,python gui keyboard event tutorial" name="keywords">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 800px)">
+  <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 800px)">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+ </head>
+ <body>
+  <div id="container">
+   <h1 id="name">
+    <a href="/">Tkinter<br>
+      Examples</a>
+   </h1>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a><a class="active" href="/events/events.html">Events</a>
+    </nav>
+    <nav id="secondary">
+     <a class="active" href="/events/keyboard/keyboard.html">Keyboard</a><a href="/events/mouse/mouse.html">Mouse</a><a href="/events/window/window.html">Window</a>
+    </nav>
+    <nav id="tertiary"></nav>
+   
+   
+    ## 
+     Keyboard Events
+    
+    
+     Capturing keystrokes inside our `tkinter` program.
+    
+    
+    ### 
+     Capture All Key Presses <a href="#all">#</a>
+    
+    
+     We often want to bind a widget to a key on our keyboard being pressed. The general case for this is
+      using the `<Key>` event type.
+    
+    ```import tkinter
+
+root = tkinter.Tk()
+
+def key_handler(event):
+    print(event.char, event.keysym, event.keycode)
+
+root.bind("<Key>", key_handler)
+
+root.mainloop()```
+    
+     This program outputs the following on a few key strokes. Note that for special characters the
+      `event.char` attribute is empty.
+    
+    ```j j 106
+h h 104
+7 7 55
+6 6 54
+. period 46
+, comma 44
+; semicolon 59
+  Return 2359309
+  Caps_Lock 65536
+          Tab 3145737```
+    
+    ### 
+     Capture Specific Key Presses <a href="#specific">#</a>
+    
+    
+     Binding to a specific key requires a very simple event specifier - the character of the key you want
+      to bind to. Note that "space" and "<" cannot be used like this. See <a href="#special">special
+      keys</a> below. Also note that capitalization matters ("z" is not equal to "Z")
+    
+    ```root.bind("z", lambda x: print("You pressed lowercase z"))
+root.bind("Z", lambda x: print("You pressed capital Z"))
+root.bind("3", lambda x: print("You pressed 3"))```
+    ### 
+     Key Sequences <a href="#sequence">#</a>
+    
+    
+     `tkinter` gives us a very easy way to only call a handler if keys were pressed in a
+      specific sequence. This takes advantage of how the `.bind()` method works, requiring a
+      sequence of specifiers for the first argument:
+    
+    ```root.bind("abc", lambda x: print("You pressed abc in that order"))
+root.bind("beef", lambda x: print("ooh yummy!"))```
+    ### 
+     Special Keys <a href="#special">#</a>
+    
+    
+     There are some special keys that have distinct event bindings:
+    
+    
+     - 
+      `<Return>` - The return / enter key
+     
+     - 
+      `<Up>, <Down>, <Left>, <Right>` - The arrow keys
+     
+     - 
+      `<space>, <less>` - The space and less than keys, respectively
+     
+     - 
+      `<Shift-Up>, <Alt-Up>, <Control-Up>` - The up key was pressed while
+        a modifier key was pressed
+     
+    
+    ### 
+     Focus <a href="#focus">#</a>
+    
+    
+     The last thing we need to talk about regarding keyboard events is the "focus" events. These are
+      triggered when keyboard focus has been moved to or from the specified widget. This focus is moved by
+      using the `focus_set()` method on the widget.
+    
+    
+     - 
+      `<FocusIn>` - Keyboard focus was moved to this widget
+     
+     - 
+      `<FocusOut>` - Keyboard focus was moved out of this widget
+     
+    
+   
+  
+ </body>
+</html>

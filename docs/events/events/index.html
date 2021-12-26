@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Tkinter Event Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/events/events.html">
+  <meta content="Examples for using python tkinter events to handle button clicks, key presses, and window configurations." name="description">
+  <meta content="tkinter event examples,python gui events,tkinter events,python tkinter events tutorial,tkinter python events,python gui events tutorial,tkinter bind, tkinter bind examples" name="keywords">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 800px)">
+  <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 800px)">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+ </head>
+ <body>
+  <div id="container">
+   <h1 id="name">
+    <a href="/">Tkinter<br>
+      Examples</a>
+   </h1>
+   <div id="navigation">
+    <nav id="primary">
+     <a href="/widgets/widgets.html">Widgets</a><a href="/geometry/geometry.html">Geometry</a><a class="active" href="/events/events.html">Events</a>
+    </nav>
+    <nav id="secondary">
+     <a href="/events/keyboard/keyboard.html">Keyboard</a><a href="/events/mouse/mouse.html">Mouse</a><a href="/events/window/window.html">Window</a>
+    </nav>
+   
+   
+    ## 
+     Events
+    
+    
+     Events in `tkinter` are all the command inputs that can happen inside your application
+      such as mouse movements / clicks, keyboard entries, window resizes, widget introduction, the list goes
+      on. Generally there are two types of events, those which are built into a widget and those which are
+      explicitly bound to a widget.
+    
+    
+    ### 
+     Implicit Events <a href="#implicit">#</a>
+    
+    
+     Some widgets have events built into them such as the `Button` widget which takes a
+      `command=` argument. When we click the button, the callable in our command parameter will be
+      called. Some other widgets with built in event bindings (via `command=`) are:
+    
+    
+     - 
+      `Checkbutton - called on selection`
+     
+     - 
+      `Radiobutton - called on selection`
+     
+     - 
+      `Scale - called on update (movement of scale widget)`
+     
+     - 
+      `Scrollbar - called on update (movement of scrollbar)`
+     
+     - 
+      `Spinbox - called on update (new value selected)`
+     
+    
+    
+    ### 
+     Explicitly-Bound Events <a href="#explicit">#</a>
+    
+    
+     There are many events which can be bound to any widget with the syntax:
+      `widget.bind("<Event-Specifier>", callable_handler)`. This causes the specified
+      handler to get called whenever the event occurs. Note that we can also bind events to our container
+      objects such as `Tk, Frame, & TopLevel`
+    
+    
+     - 
+      <a href="/events/keyboard/keyboard.html">Keyboard Events</a>
+     
+     - 
+      <a href="/events/mouse/mouse.html">Mouse Events</a>
+     
+     - 
+      <a href="/events/window/window.html">Window Events</a>
+     
+    
+    #### 
+     Binding Options <a href="#binding-options">#</a>
+    </h4>
+    
+     There are multiple ways to bind events to widgets in `tkinter`:
+    
+    
+     - 
+      `.bind()` - bind to the specific widget only (instance binding)
+     
+     - 
+      `.bind_class()` - bind to the all widgets of this class (class binding)
+     
+     - 
+      `.bind_all()` - bind across the whole application (application binding)
+     
+    
+    
+     Be aware that `.bind_class()` can get in the way of default widget behavior since this is
+      how tkinter itself implements default behaviors for widgets. The preferred method is creating a widget
+      class that inherits from the base class and configures a bind on instantiation.
+    
+    ```
+class BoundButton(tkinter.Button):
+    def __init__(self, master, **kw):
+        apply(tkinter.Button.__init__, (self, master), kw)
+        self.bind("<Return>", lambda event: print(event))
+      ```
+    #### 
+     Declaring Callables <a href="#callables">#</a>
+    </h4>
+    
+     When we declare callables to act as event handlers we should take note that the triggering event
+      will pass an <a href="#event-object">event object</a> into our callable function. This means we should
+      define our event handlers with one parameter. Implicit events sometimes have the additional
+      argument.
+    
+    ```
+def keyboard_handler(event):
+    print(event.char)
+
+def mouse_handler(event):
+    print(event.x, event.y)
+    print(event.char) # prints ??```
+    
+     Note that we can also pass callables directly into the `.bind()` function using
+      lambdas.
+    
+    ```
+root.bind("k", lambda event: print("k was pressed!"))```
+    #### 
+     The Event Object <a href="#event-object">#</a>
+    </h4>
+    
+     The event object passed into our event-handlers has many attributes. Some of the commonly used ones
+      are:
+    
+    
+     - 
+      `widget` - the widget which generated the event
+     
+     - 
+      `type` - the type of event this is (equal to inner text of the event specifier)
+     
+     - 
+      `x, y` - the position of the mouse relative to the bound widget (mouse events
+        only)
+     
+     - 
+      `num` - the mouse button pressed (mouse events only)
+     
+     - 
+      `char` - the pressed key as a character literal (keyboard events only)
+     
+     - 
+      `keycode, keysym` - the pressed key as a code or symbol (keyboard events only)
+     
+    
+   
+  
+ </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="english" name="language">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="/css/screen.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/icons/site.webmanifest" rel="manifest">
+  <link color="#00008B" href="/safari-pinned-tab.svg" rel="mask-icon">
+  <meta content="#00008B" name="msapplication-TileColor">
+  <meta content="#00008B" name="theme-color">
+  <title>
+   Tkinter Button Widget Examples
+  </title>
+  <link rel="“canonical”" href="https://tkinterexamples.com/widgets/button">
+  <meta content="Examples for using python tkinter button widgets to trigger events within an application" name="description">
+  <meta content="tkinter button examples,python gui button,tkinter button,tkinter python button,python tkinter button examples,python tkinter button tutorial,python gui button tutorial" name="keywords">
+ </head>
+ <body>
+  <header>
+   <h1>
+    <a href="/">tkinter<br>examples</a>
+   </h1>
+   <nav>
+    <a href="/geometry">geometry</a>
+        <a href="/events">events</a>
+        <a class="active" href="/widgets">widgets</a>
+   </nav>
+  </header>
+  <main>
+   <h2>
+    Button
+   </h2>
+   <p>
+    The <code>Button</code> element is used to create clickable, event-performing buttons inside an application.
+   </p>
+   <h3>
+    Simple Button
+   </h3>
+   <p>
+    A simple <code>Button</code> is rather easy to set up using only a couple of attributes.
+   </p>
+   <pre><code>import tkinter
+from tkinter import messagebox
+
+def show_alert():
+messagebox.showinfo("Window Title", "Hello world!")
+
+root = tkinter.Tk()
+
+tkinter.Button(root, text="Click Me", command=show_alert).pack()
+
+root.mainloop()
+</code></pre>
+   <p>
+    <img src="simple.jpg" alt="A simple button example in tkinter">
+   </p>
+   <h3>
+    Button with Image
+   </h3>
+   <p>
+    We can also draw our button with an image instead of text. This can be helpful to create toolbars with icons for commonly understood operations such as save, print, etc.
+   </p>
+   <pre><code>from PIL import Image, ImageTk
+import tkinter
+from tkinter import messagebox
+
+root = tkinter.Tk()
+
+image_tk = ImageTk.PhotoImage(Image.open("/path/to/image.png")) 
+
+tkinter.Button(root, image=image_tk).pack()
+
+root.mainloop()
+</code></pre>
+   <p>
+    <img src="image.jpg" alt="An image inside of a button">
+   </p>
+   <h3>
+    Disabled Button
+   </h3>
+   <p>
+    We may want a <code>Button</code> to render even if it isn’t currently hooked up to a command. In this case we can specify that the button is disabled and this will make it non-clickable.
+   </p>
+   <pre><code>import tkinter
+
+root = tkinter.Tk()
+
+button = tkinter.Button(root, text="Click Me", state=tkinter.DISABLED)
+button.pack()
+
+root.mainloop()
+</code></pre>
+   <p>
+    <img src="disabled.jpg" alt="A disabled button in tkinter">
+   </p>
+   <p>
+    If we would like to this button to become useable we need to set a couple attributes:
+   </p>
+   <pre><code># Give the button a command to execute
+button["command"] = lambda: print("HELLO WORLD!")
+# Set the button state back to normal
+button["state"] = tkinter.NORMAL
+</code></pre>
+  </main>
+  <footer></footer>
+  <script async="true" src="/js/count.js"></script>
+ </body>
+</html>
