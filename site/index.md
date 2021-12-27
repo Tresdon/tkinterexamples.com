@@ -21,9 +21,13 @@ This section details how to capture mouse, window, and keyboard events inside yo
   
 ## Examples
 
-This application is a simple photo viewer. It uses the grid geometry manager and only a handful of widgets: `Canvas`, `Button`, `Listbox`, and `Label` ![Photo Viewer](photo_viewer.jpg)
+This application is a simple photo viewer. It uses the grid geometry manager and only a handful of widgets: `Canvas`, `Button`, `Listbox`, and `Label`
 
-This application allows broadcasting and listening to audio via TCP ports. This uses the grid geometry manager and a few widgets: Button, Entry, RadioButton, and Label !["Soundclub Radio"](soundclub_radio.jpg)
+![Photo Viewer](photo_viewer.jpg)
+
+This application allows broadcasting and listening to audio via TCP ports. This uses the grid geometry manager and a few widgets: Button, Entry, RadioButton, and Label
+
+!["Soundclub Radio"](soundclub_radio.jpg)
 
 <footer>
 NB: We can use `tkinter` to create all sorts of programs, but note that it isn't intended

@@ -55,9 +55,9 @@ tkinter.Entry(root, text="Entry").pack()
 
 root.mainloop()
 </code></pre>
-   <p>
+   <figure>
     <img src="no-args.jpg" alt="Using pack with no arguments">
-   </p>
+   </figure>
    <h3>
     Picking Sides
    </h3>
@@ -76,9 +76,9 @@ tkinter.Label(root, text="BOTTOM").pack(side=tkinter.BOTTOM)
 
 root.mainloop()
 </code></pre>
-   <p>
+   <figure>
     <img src="side.jpg" alt="Using the side parameter">
-   </p>
+   </figure>
    <h3>
     Expanding On That A Bit
    </h3>
@@ -96,9 +96,9 @@ tkinter.Label(root, text="EXPANDED", bg="navy", fg="white").pack(expand=True)
 
 root.mainloop()
 </code></pre>
-   <p>
+   <figure>
     <img src="expand.jpg" alt="Using the expand parameter">
-   </p>
+   </figure>
    <h3>
     Filling In The Gaps
    </h3>
@@ -117,21 +117,21 @@ tkinter.Label(root, text="Fill None", bg="black", fg="white").pack(side=tkinter.
 
 root.mainloop()
 </code></pre>
-   <p>
+   <figure>
     <img src="fill.jpg" alt="Using the fill parameter">
-   </p>
+   </figure>
    <p>
     From the sound of it we may expect to the “Fill BOTH” cell to take up more space in the X direction. The error here is that <code>side=RIGHT</code> for the widget, so it can only “fill” in the Y axis where it’s not pushed to anywhere specific. An example to highlight this, switching only the fill for X to Y and vice versa from above:
    </p>
-   <p>
+   <figure>
     <img src="fill_incorrect.jpg" alt="Incorrect usage of the fill parameter">
-   </p>
+   </figure>
    <p>
     To get a result where our element fills in both directions and takes up any unused space then we want to use <code>fill</code> in conjunction with <code>expand</code> . From the code above all we have to do is set <code>expand=True</code> on the “Fill BOTH” cell and we get this:
    </p>
-   <p>
+   <figure>
     <img src="fill_expand.jpg" alt="Using fill with expand">
-   </p>
+   </figure>
   </main>
   <footer></footer>
   <script async="true" src="/js/count.js"></script>

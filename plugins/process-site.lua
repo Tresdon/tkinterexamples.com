@@ -1,6 +1,5 @@
 -- arbitrary site processing
 
-
 -- merge heads
 heads = HTML.select(page, "head")
 if Table.has_key(heads, 2) then
@@ -30,4 +29,3 @@ if(page_url == "/") then
   title = HTML.select_one(page, "h1 a")
   HTML.add_class(title, "active")
 end
-

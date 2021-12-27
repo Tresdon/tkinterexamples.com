@@ -4,8 +4,7 @@
     --black: black;
     --code-background: #f0927f;
     --font-family: Georgia, 'Times New Roman', Times, serif;
-    --writing-max-width: 600px; /* Not too many characters to read */
-    --art-max-width: 94%; /* Fit comfy on the page available */
+    --max-width: min(94%, 600px);
     --spread: 1;
     --scale: 1;
 }
@@ -17,8 +16,8 @@ html {
 }
 
 body {
-    flex-basis: var(--writing-max-width);
     font-family: var(--font-family);
+    max-width: var(--max-width);
     background-color: var(--white);
     display: flex;
     flex-direction: column;
@@ -32,7 +31,7 @@ header {
 }
 
 main {
-    max-width: var(--writing-max-width);
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +49,7 @@ header a {
     display: inline-block;
     color: var(--black);
     text-decoration: none;
-    text-underline-offset: calc(var(--spread) * 4px);
+    text-underline-offset: calc(var(--spread) * 6px);
 }
 
 header a:hover, header a.active {
@@ -67,6 +66,7 @@ header nav a {
 header h1 {
     text-align: center;
     color: var(--black);
+    line-height: calc(var(--spread) * 1.4em);
     font-size: calc(var(--scale) * 2.1em);
     padding: calc(var(--spread) * 4px);
 }
@@ -87,9 +87,18 @@ main a:hover{
 }
 
 /* Elements */
-img {
-    margin: calc(var(--spread) * 30px);
-    max-width: 98%;
+figure {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+figure img {
+    margin: 0;
+    width: auto;
+    max-width: 100%;
 }
 
 code {
