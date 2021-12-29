@@ -58,6 +58,26 @@ header a:hover, header a.active {
     text-decoration: underline var(--primary) calc(var(--scale) * 3px);
 }
 
+header nav {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125em;
+}
+
+header nav #primary-nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav #secondary-nav {
+    margin-top: calc(var(--spread) * 25px);
+    display: flex;
+    gap: 15px;
+    font-size: 1em;
+}
+
 header nav a {
     padding: calc(var(--spread) * 3px);
     font-size: calc(var(--scale) * 1.2em);
